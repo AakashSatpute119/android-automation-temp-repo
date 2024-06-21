@@ -59,6 +59,7 @@ jobs:
             adb devices
             sleep 10
             appium --address 0.0.0.0 --port 4723 &
+            APPIUM_PID=$!
             sleep 10
             npm test
             TEST_EXIT_CODE=$?

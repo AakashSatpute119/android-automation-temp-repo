@@ -27,12 +27,6 @@ describe("Mobile App Test", function () {
     driver = await remote(wdOpts);
   });
 
-  after(async function () {
-    if (driver) {
-      await driver.deleteSession();
-    }
-  });
-
   it("login test", async () => {
     if (!driver) {
       throw new Error("Driver is not initialized. Test cannot be run.");
@@ -56,36 +50,27 @@ describe("Mobile App Test", function () {
       const privacyAcceptElement = await driver.$(
         '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/accept_policy"]'
       );
-      // await privacyAcceptElement.click();
+      await privacyAcceptElement.click();
       // await driver.setTimeout({ implicit: 5000 });
       // const notificationPermission = await driver.$(
       //   '//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]'
       // );
       // await notificationPermission.click();
 
-      // await driver.setTimeout({ implicit: 5000 });
-      // const noInputBox = await driver.$(
-      //   '//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/etResult"]'
-      // );
-      // await noInputBox.setValue("8668727053");
+      await driver.setTimeout({ implicit: 5000 });
+      const noInputBox = await driver.$(
+        '//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/etResult"]'
+      );
+      await noInputBox.setValue("8668727053");
 
-      // const sendOtpButton = await driver.$(
-      //   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/btnCollect"]'
-      // );
-      // await sendOtpButton.click();
-      // await driver.setTimeout({ implicit: 6000 });
-
-      // const otpElement =
-      //   '//*[@id="sourceContainer"]/div/div/div/div[3]/div/div/div/div[12]/span[3]';
-      // await otpElement.setValue("0000");
-      // //(//android.widget.FrameLayout[@resource-id="org.samagra.missionPrerna:id/otp_view_temp"])[1]c
-
-      // const submitOtp =
-      //   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/validate_button"]';
-      // await submitOtp.click();
+      const sendOtpButton = await driver.$(
+        '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/btnCollect"]'
+      );
+      await sendOtpButton.click();
+      await driver.setTimeout({ implicit: 6000 });
     } finally {
       if (driver) {
-        // await driver.deleteSession();
+        await driver.deleteSession();
       }
     }
   });
