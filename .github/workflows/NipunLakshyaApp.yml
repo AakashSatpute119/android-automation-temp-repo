@@ -1,0 +1,64 @@
+name: Appium Tests
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Appium
+        run: npm install -g appium
+
+      - name: Start Appium server
+        run: appium --address 0.0.0.0 --port 4723 &
+
+      - name: Enable KVM group perms
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Gradle cache
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: AVD cache
+        uses: actions/cache@v4
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-30
+
+      - name: Create AVD, install APK, and run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          avd-name: pixel_30
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel
+          disable-animations: true
+          force-avd-creation: false
+          emulator-boot-timeout: 1200
+          script: |
+            adb wait-for-device
+            while [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do sleep 1; done
+            adb shell input keyevent 82  
+            adb devices
+            sleep 10
+            npm test

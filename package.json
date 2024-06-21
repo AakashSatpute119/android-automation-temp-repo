@@ -1,0 +1,22 @@
+{
+  "name": "nl_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/mocha test/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "appium": "^2.10.3",
+    "appium-doctor": "^1.16.2",
+    "appium-uiautomator2-driver": "^3.5.6",
+    "webdriverio": "^8.39.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0"
+  }
+}
