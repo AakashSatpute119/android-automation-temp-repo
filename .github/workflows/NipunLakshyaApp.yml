@@ -23,9 +23,6 @@ jobs:
       - name: Install Appium
         run: npm install -g appium
 
-      - name: Start Appium server
-        run: appium --address 0.0.0.0 --port 4723 &
-
       - name: Enable KVM group perms
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -60,5 +57,7 @@ jobs:
             while [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do sleep 1; done
             adb shell input keyevent 82  
             adb devices
-            sleep 30
+            sleep 10
+            Run appium --address 0.0.0.0 --port 4723 &
+            sleep 10
             npm test
