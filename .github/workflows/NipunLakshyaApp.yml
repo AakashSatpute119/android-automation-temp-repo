@@ -60,5 +60,5 @@ jobs:
             while [ "$(adb shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do sleep 1; done
             adb shell input keyevent 82  
             adb devices
-            sleep 10
+            sleep 30
             npm test

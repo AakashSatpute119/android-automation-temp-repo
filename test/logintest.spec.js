@@ -38,7 +38,7 @@ describe("Mobile App Test", function () {
       throw new Error("Driver is not initialized. Test cannot be run.");
     }
 
-    await driver.setTimeout({ implicit: 30000 });
+    await driver.setTimeout({ implicit: 60000 });
 
     try {
       const privacyScrollerElement = await driver.$(
