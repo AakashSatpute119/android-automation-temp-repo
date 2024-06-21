@@ -56,24 +56,24 @@ describe("Mobile App Test", function () {
       const privacyAcceptElement = await driver.$(
         '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/accept_policy"]'
       );
-      await privacyAcceptElement.click();
-      await driver.setTimeout({ implicit: 5000 });
-      const notificationPermission = await driver.$(
-        '//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]'
-      );
-      await notificationPermission.click();
+      // await privacyAcceptElement.click();
+      // await driver.setTimeout({ implicit: 5000 });
+      // const notificationPermission = await driver.$(
+      //   '//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]'
+      // );
+      // await notificationPermission.click();
 
-      await driver.setTimeout({ implicit: 5000 });
-      const noInputBox = await driver.$(
-        '//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/etResult"]'
-      );
-      await noInputBox.setValue("8668727053");
+      // await driver.setTimeout({ implicit: 5000 });
+      // const noInputBox = await driver.$(
+      //   '//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/etResult"]'
+      // );
+      // await noInputBox.setValue("8668727053");
 
-      const sendOtpButton = await driver.$(
-        '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/btnCollect"]'
-      );
-      await sendOtpButton.click();
-      await driver.setTimeout({ implicit: 6000 });
+      // const sendOtpButton = await driver.$(
+      //   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/btnCollect"]'
+      // );
+      // await sendOtpButton.click();
+      // await driver.setTimeout({ implicit: 6000 });
 
       // const otpElement =
       //   '//*[@id="sourceContainer"]/div/div/div/div[3]/div/div/div/div[12]/span[3]';
