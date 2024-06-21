@@ -23,6 +23,9 @@ jobs:
       - name: Install Appium
         run: npm install -g appium
 
+      - name: Start appium server
+        run: appium --address 0.0.0.0 --port 4723 &
+
       - name: Enable KVM group perms
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -58,11 +61,4 @@ jobs:
             adb shell input keyevent 82  
             adb devices
             sleep 10
-            appium --address 0.0.0.0 --port 4723 &
-            APPIUM_PID=$!
-            sleep 10
             npm test
-            TEST_EXIT_CODE=$?
-            echo "Stopping Appium server with PID $APPIUM_PID"
-            kill $APPIUM_PID || echo "Failed to kill Appium process"
-            exit $TEST_EXIT_CODE
