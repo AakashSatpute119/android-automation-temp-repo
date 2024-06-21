@@ -21,10 +21,16 @@ const wdOpts = {
 };
 
 describe("Mobile App Test", function () {
-  this.timeout(80000); // Set a longer timeout for Appium operations
+  this.timeout(60000); // Set a longer timeout for Appium operations
 
   before(async function () {
     driver = await remote(wdOpts);
+  });
+
+  after(async function () {
+    if (driver) {
+      await driver.deleteSession();
+    }
   });
 
   it("login test", async () => {
@@ -32,7 +38,7 @@ describe("Mobile App Test", function () {
       throw new Error("Driver is not initialized. Test cannot be run.");
     }
 
-    await driver.setTimeout({ implicit: 20000 });
+    await driver.setTimeout({ implicit: 60000 });
 
     try {
       const privacyScrollerElement = await driver.$(
@@ -68,9 +74,18 @@ describe("Mobile App Test", function () {
       // );
       // await sendOtpButton.click();
       // await driver.setTimeout({ implicit: 6000 });
+
+      // const otpElement =
+      //   '//*[@id="sourceContainer"]/div/div/div/div[3]/div/div/div/div[12]/span[3]';
+      // await otpElement.setValue("0000");
+      // //(//android.widget.FrameLayout[@resource-id="org.samagra.missionPrerna:id/otp_view_temp"])[1]c
+
+      // const submitOtp =
+      //   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/validate_button"]';
+      // await submitOtp.click();
     } finally {
       if (driver) {
-        await driver.deleteSession();
+        // await driver.deleteSession();
       }
     }
   });
