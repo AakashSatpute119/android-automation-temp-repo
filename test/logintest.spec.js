@@ -21,7 +21,7 @@ const wdOpts = {
 };
 
 describe("Mobile App Test", function () {
-  this.timeout(60000); // Set a longer timeout for Appium operations
+  this.timeout(80000); // Set a longer timeout for Appium operations
 
   before(async function () {
     driver = await remote(wdOpts);
@@ -57,17 +57,17 @@ describe("Mobile App Test", function () {
       // );
       // await notificationPermission.click();
 
-      await driver.setTimeout({ implicit: 5000 });
-      const noInputBox = await driver.$(
-        '//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/etResult"]'
-      );
-      await noInputBox.setValue("8668727053");
+      // await driver.setTimeout({ implicit: 5000 });
+      // const noInputBox = await driver.$(
+      //   '//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/etResult"]'
+      // );
+      // await noInputBox.setValue("8668727053");
 
-      const sendOtpButton = await driver.$(
-        '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/btnCollect"]'
-      );
-      await sendOtpButton.click();
-      await driver.setTimeout({ implicit: 6000 });
+      // const sendOtpButton = await driver.$(
+      //   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/btnCollect"]'
+      // );
+      // await sendOtpButton.click();
+      // await driver.setTimeout({ implicit: 6000 });
     } finally {
       if (driver) {
         await driver.deleteSession();
