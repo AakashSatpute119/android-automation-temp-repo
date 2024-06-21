@@ -21,7 +21,7 @@ const wdOpts = {
 };
 
 describe("Mobile App Test", function () {
-  this.timeout(20000); // Set a longer timeout for Appium operations
+  this.timeout(60000); // Set a longer timeout for Appium operations
 
   before(async function () {
     driver = await remote(wdOpts);
@@ -38,7 +38,7 @@ describe("Mobile App Test", function () {
       throw new Error("Driver is not initialized. Test cannot be run.");
     }
 
-    await driver.setTimeout({ implicit: 60000 });
+    await driver.setTimeout({ implicit: 20000 });
 
     try {
       const privacyScrollerElement = await driver.$(
