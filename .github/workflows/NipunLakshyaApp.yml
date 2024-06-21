@@ -64,9 +64,5 @@ jobs:
             TEST_EXIT_CODE=$?
             echo "Stopping Appium server running on port 4723"
             PID=$(lsof -ti :4723)
-            if [ -n "$PID" ]; then
-              kill $PID || echo "Failed to kill Appium process on port 4723"
-            else
-              echo "No process found running on port 4723"
-            fi
+            kill $PID || echo "Failed to kill Appium process on port 4723"
             exit $TEST_EXIT_CODE
