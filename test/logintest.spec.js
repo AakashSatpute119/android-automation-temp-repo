@@ -21,7 +21,7 @@ const wdOpts = {
 };
 
 describe("Mobile App Test", function () {
-  this.timeout(60000); // Set a longer timeout for Appium operations
+  this.timeout(100000); // Set a longer timeout for Appium operations
 
   before(async function () {
     driver = await remote(wdOpts);
