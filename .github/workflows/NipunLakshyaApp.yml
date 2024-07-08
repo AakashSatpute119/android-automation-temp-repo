@@ -66,3 +66,11 @@ jobs:
             PID=$(lsof -ti :4723)
             kill $PID || echo "Failed to kill Appium process on port 4723"
             exit $TEST_EXIT_CODE
+
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test report
+          path: |
+            mochawesome-report/**
