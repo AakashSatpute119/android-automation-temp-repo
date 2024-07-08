@@ -2,6 +2,7 @@
   "name": "nl_app",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/mocha test/*.js"
   },
