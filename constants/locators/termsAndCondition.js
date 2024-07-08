@@ -1,4 +1,4 @@
-import exp from "constants";
+// Term and conditions page elemets
 
 export const privacyPolicyHeader =
   '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/privacy_header"]';
@@ -14,9 +14,12 @@ export const checkBox =
 
 export const privacyScoller =
   '//android.widget.ImageView[@resource-id="org.samagra.missionPrerna:id/privacy_scroller"]';
+
 export const aageBadheButton =
   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/accept_policy"]';
+
 export const popupMessageOnAageBadhe =
   '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/title_tv"]';
+
 export const okButton =
   '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/cta_button"]';

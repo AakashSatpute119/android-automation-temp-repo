@@ -1,3 +1,4 @@
+//   T&C page
 export const privacyPolicyHeaderText = "प्राइवेसी पॉलिसी - निपुण लक्ष्य ऐप";
 export const privacyPolicyText = `बेसिक शिक्षा विभाग ,उत्तर प्रदेश सरकार द्वारा निपुण लक्ष्य नामक एक निशुल्क एंड्राइड ऐप का निर्माण किया गया है। बेसिक शिक्षा विभाग, उत्तर प्रदेश सरकार का आशय है इस सेवा को निशुल्क उपलब्ध कराना।
 
@@ -25,3 +26,23 @@ export const privacyPolicyText = `बेसिक शिक्षा विभ�
 export const iAgreeText = "मैं सहमत हूँ।";
 export const popupMessageOnAageBadheText =
   "ऐप का उपयोग करने के लिए आपको गोपनीयता नीति के नियमों और शर्तों को स्वीकार करने के लिए चेकबॉक्स पर क्लिक करना होगा।";
+
+// Login Page
+
+export const titleTextOnLoginPage = " मेंटर, शिक्षक, परीक्षक";
+export const enterRegisterNumberText = "पंजीकृत मोबाइल नंबर भरें";
+export const sendOtpButtonText = "OTP भेजें।";
+export const numberNotregistedText = "नंबर पंजीकृत नहीं है?";
+export const helplineNumberText = "0522–3538777";
+export const mobileNumberInputBoxText = "जैसे: 9876543210";
+export const tenDigitNumber = "1234567890";
+export const moreThanTenDigitNumber = "1234567890123";
+export const mobileNotRegisteredOnPortal = "7756925005";
+export const pleaseCheckNumberText =
+  "कृपया अपने द्वारा भरे गए मोबाइल नंबर की जांच करें";
+export const pleaseEnterCorrectNumberText =
+  "कृपया एक मान्य मोबाइल नंबर दर्ज करें।";
+export const okButton = "ठीक है";
+export const unableToSendOtpText = "ओटीपी नहीं भेजा जा सका।";
+export const numberIsNotRegisteredOnPernaPortalText = `This mobile number is not registered.
+To register on Prerna portal, please call the DC Training/Quality in BSA office or call helpline number.`;

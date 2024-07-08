@@ -2,31 +2,15 @@ import { remote } from "webdriverio";
 import assert from "assert";
 import * as tAndCLocators from "../constants/locators/termsAndCondition.js";
 import * as constants from "../constants/constants.js";
+import { getWdOpts } from "../utils/wdOptions.js";
 
 let driver;
 
-const platformName = process.env.APPIUM_PLATFORM_NAME || "Android";
-const automationName = process.env.APPIUM_AUTOMATION_NAME || "UiAutomator2";
-const deviceName = process.env.APPIUM_DEVICE_NAME || "emulator-5554";
-const apkPath = process.env.APPIUM_APP_PATH || "App/app.apk";
-
-const wdOpts = {
-  hostname: process.env.APPIUM_HOST || "0.0.0.0",
-  port: parseInt(process.env.APPIUM_PORT, 10) || 4723,
-  logLevel: "info",
-  capabilities: {
-    platformName,
-    "appium:automationName": automationName,
-    "appium:deviceName": deviceName,
-    "appium:app": apkPath,
-  },
-};
-
-describe("Mobile App Test", function () {
+describe("Terms and conditions page test", function () {
   this.timeout(100000);
 
   before(async function () {
-    driver = await remote(wdOpts);
+    driver = await remote(getWdOpts());
   });
 
   after(async function () {
