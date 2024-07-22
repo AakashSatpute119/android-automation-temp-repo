@@ -5,12 +5,12 @@ import * as constants from "../../constants/constants.js";
 import { getWdOpts } from "../../utils/wdOptions.js";
 import * as loginPageLocators from "../../constants/locators/loginPage.js";
 import * as teacherFlowLocators from "../../constants/locators/teacherFlow.js";
+import { refreshScreenByScrollDown } from "../../utils/refresh.js";
 
 let driver;
 
 describe("Teacher profile page test cases", function () {
   this.timeout(100000);
-  this.retries(2);
 
   before(async function () {
     driver = await remote(getWdOpts());
@@ -36,6 +36,8 @@ describe("Teacher profile page test cases", function () {
       loginPageLocators.buttonOnLoggedInsuccessfullyPopUp
     );
     loggedInSuccessfully.click();
+    // refresh on screen
+    await refreshScreenByScrollDown(driver);
   });
 
   after(async function () {
