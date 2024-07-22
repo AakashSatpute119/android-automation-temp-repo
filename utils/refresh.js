@@ -1,3 +1,5 @@
+// utils.js
+
 export const refreshScreenByScrollDown = async (driver) => {
   const { width, height } = await driver.getWindowSize();
   const anchorPercentage = 50;
@@ -8,11 +10,25 @@ export const refreshScreenByScrollDown = async (driver) => {
   const startPoint = (height * startPointPercentage) / 100;
   const endPoint = (height * endPointPercentage) / 100;
 
-  await driver.touchAction([
-    { action: "press", x: anchor, y: startPoint },
-    { action: "wait", ms: 1000 },
-    { action: "moveTo", x: anchor, y: endPoint },
-    { action: "release" },
+  await driver.performActions([
+    {
+      type: "pointer",
+      id: "finger1",
+      parameters: { pointerType: "touch" },
+      actions: [
+        { type: "pointerMove", duration: 0, x: anchor, y: startPoint },
+        { type: "pointerDown", button: 0 },
+        { type: "pause", duration: 1000 },
+        {
+          type: "pointerMove",
+          duration: 1000,
+          origin: "pointer",
+          x: 0,
+          y: endPoint - startPoint,
+        },
+        { type: "pointerUp", button: 0 },
+      ],
+    },
   ]);
 
   // Wait for refresh to complete (adjust time as necessary)
