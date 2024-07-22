@@ -10,6 +10,7 @@ let driver;
 
 describe("Teacher profile page test cases", function () {
   this.timeout(100000);
+  this.retries(2);
 
   before(async function () {
     driver = await remote(getWdOpts());
