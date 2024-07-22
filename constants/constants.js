@@ -1,3 +1,5 @@
+import exp from "constants";
+
 //   T&C page
 export const privacyPolicyHeaderText = "प्राइवेसी पॉलिसी - निपुण लक्ष्य ऐप";
 export const privacyPolicyText = `बेसिक शिक्षा विभाग ,उत्तर प्रदेश सरकार द्वारा निपुण लक्ष्य नामक एक निशुल्क एंड्राइड ऐप का निर्माण किया गया है। बेसिक शिक्षा विभाग, उत्तर प्रदेश सरकार का आशय है इस सेवा को निशुल्क उपलब्ध कराना।
@@ -46,3 +48,23 @@ export const okButton = "ठीक है";
 export const unableToSendOtpText = "ओटीपी नहीं भेजा जा सका।";
 export const numberIsNotRegisteredOnPernaPortalText = `This mobile number is not registered.
 To register on Prerna portal, please call the DC Training/Quality in BSA office or call helpline number.`;
+
+// teacher profile page :
+export const nipunLakshyaAppTitle = "निपुण लक्ष्य ऐप ";
+export const appVersiontext = "V 2.3.2";
+export const teacherValidMobileNumber = "8668727053";
+export const defaultOtp = "0000";
+export const teacherProfileText = "शिक्षक प्रोफाइल";
+export const nameText = "नाम :   Prod Teacher ";
+export const udiseText = "UDISE :   9150202302";
+export const districtText = "जनपद :   AGRA";
+export const blockText = "ब्लॉक :   Achhnera";
+export const teacherAnkalanSaranshText = "शिक्षक आकलन सारांश";
+export const vartamanSaptahikAkalanText = "वर्तमान सप्ताह आकलन";
+export const studentsAssessedInWeekText = "विद्यार्थियों का आंकलन किया";
+export const nipunStudentsInWeekText = "निपुण\nविद्यार्थी";
+export const studentsAssessedInMonthText = "विद्यार्थियों का आंकलन किया";
+export const nipunStudentsInMonthText = "निपुण\nविद्यार्थी";
+export const vidyarthiAkalanButoonText = "विद्यार्थी आकलन";
+export const vidyalayKeAkalanKaSaransButtonText =
+  "विद्यालय के सभी आकलन का सारांश";

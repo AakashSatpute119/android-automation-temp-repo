@@ -31,3 +31,9 @@ export const okButton =
 
 export const unableToSendOtp = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/title_tv"]`;
 export const numberIsNotRegisteredOnPernaPortal = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/description_tv"]`;
+export const otpInputBox =
+  '-android uiautomator:new UiSelector().className("android.widget.EditText").instance(0)';
+export const submitOtpButton =
+  '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/validate_button"]';
+export const buttonOnLoggedInsuccessfullyPopUp =
+  '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/cta_button"]';

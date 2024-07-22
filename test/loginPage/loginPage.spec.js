@@ -1,9 +1,9 @@
 import { remote } from "webdriverio";
 import assert from "assert";
-import * as tAndCLocators from "../constants/locators/termsAndCondition.js";
-import * as constants from "../constants/constants.js";
-import { getWdOpts } from "../utils/wdOptions.js";
-import * as loginPageLocators from "../constants/locators/loginPage.js";
+import * as tAndCLocators from "../../constants/locators/termsAndCondition.js";
+import * as constants from "../../constants/constants.js";
+import { getWdOpts } from "../../utils/wdOptions.js";
+import * as loginPageLocators from "../../constants/locators/loginPage.js";
 
 let driver;
 

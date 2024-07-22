@@ -15,6 +15,7 @@ export const getWdOpts = () => {
       "appium:automationName": automationName,
       "appium:deviceName": deviceName,
       "appium:app": apkPath,
+      "appium:autoGrantPermissions": true,
     },
   };
 };
