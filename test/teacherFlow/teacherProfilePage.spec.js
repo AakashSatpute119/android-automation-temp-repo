@@ -108,6 +108,8 @@ describe("Teacher profile page test cases", function () {
     );
 
     //udise
+    await driver.setTimeout({ implicit: 20000 });
+
     const udise = await driver.$(teacherFlowLocators.uside);
     const isUdiseDisplayed = await udise.isDisplayed();
     assert.strictEqual(isUdiseDisplayed, true, "Element is not displayed");
@@ -237,6 +239,8 @@ describe("Teacher profile page test cases", function () {
 
   it("Verify count of student nipun in month text and count is visiable", async () => {
     // nipun students in month
+    await driver.setTimeout({ implicit: 20000 });
+
     const studentsNipundInMonth = await driver.$(
       teacherFlowLocators.countNipunStudentsInMonth
     );

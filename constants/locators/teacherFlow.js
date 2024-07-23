@@ -19,3 +19,19 @@ export const countNipunStudentsInMonth = `(//android.widget.TextView[@resource-i
 export const countOfStudentAssesedInMonth = `(//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/labelTextView"])[3]`;
 export const studentAkalanButton = `//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/mtl_btn_setup_assessment"]`;
 export const schoolAssessmentSummaryButton = `//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/mtl_btn_school_assessment_summary"]`;
+
+// school summary page
+export const headerTextSchoolAkalanSaransh = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/title"]`;
+export const appVersionInHeader = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tv_version"]`;
+export const grade1Label = `//android.widget.TextView[@text="कक्षा 1"]`;
+export const grade2Label = `//android.widget.TextView[@text="कक्षा 2"]`;
+export const grade3Label = `//android.widget.TextView[@text="कक्षा 3"]`;
+export const allGradesLabel = `//android.widget.TextView[@text="सभी कक्षा"]`;
+
+export const month = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/month_tv" and @text="माह"]`;
+export const totalStudents = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/total_students_count_tv" and @text="कुल
+विद्यार्थी"]`;
+export const studentsAssessed = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/total_assessments_count_tv" and @text="विद्यार्थी
+आकलन किए"]`;
+export const nipunStudents = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/total_assessments_count_tv" and @text="विद्यार्थी
+आकलन किए"]`;
