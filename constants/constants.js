@@ -68,3 +68,15 @@ export const nipunStudentsInMonthText = "निपुण\nविद्यार�
 export const vidyarthiAkalanButoonText = "विद्यार्थी आकलन";
 export const vidyalayKeAkalanKaSaransButtonText =
   "विद्यालय के सभी आकलन का सारांश";
+
+
+  // school summary page 
+export const headerTextSchoolAkalanSaranshText="स्कूल आकलन सारांश"
+export const grade1LabelText="कक्षा 1"
+export const grade2LabelText="कक्षा 2"
+export const grade3LabelText="कक्षा 3"
+export const allGradesLabelText="सभी कक्षा"
+export const monthText="माह"
+export const totalStudentsText="कुल\nविद्यार्थी"
+export const studentsAssessedText="विद्यार्थी\nआकलन किए"
+export const nipunStudentsText="विद्यार्थी\nनिपुण"

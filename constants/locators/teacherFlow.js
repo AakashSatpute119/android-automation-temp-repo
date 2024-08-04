@@ -33,5 +33,8 @@ export const totalStudents = `//android.widget.TextView[@resource-id="org.samagr
 विद्यार्थी"]`;
 export const studentsAssessed = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/total_assessments_count_tv" and @text="विद्यार्थी
 आकलन किए"]`;
-export const nipunStudents = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/total_assessments_count_tv" and @text="विद्यार्थी
-आकलन किए"]`;
+export const nipunStudents = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/nipun_student_count_tv" and @text="विद्यार्थी
+निपुण"]`
+
+export const monthTable=`//androidx.recyclerview.widget.RecyclerView[@resource-id="org.samagra.missionPrerna:id/rvSchoolHistory"]`
+
