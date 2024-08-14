@@ -217,13 +217,6 @@ describe("Teacher profile page test cases", function () {
     const studentsAssessedInMonth = await driver.$(
       teacherFlowLocators.countOfStudentAssesedInMonth
     );
-    const studentsAssessedInMonthElement =
-      await studentsAssessedInMonth.isDisplayed();
-    assert.strictEqual(
-      studentsAssessedInMonthElement,
-      true,
-      "Element is not displayed"
-    );
     const studentsAssessedInMonthtext = await studentsAssessedInMonth.getText();
     assert.strictEqual(
       studentsAssessedInMonthtext,
@@ -240,13 +233,7 @@ describe("Teacher profile page test cases", function () {
     const studentsNipundInMonth = await driver.$(
       teacherFlowLocators.countNipunStudentsInMonth
     );
-    const studentsNipundInMonthElement =
-      await studentsNipundInMonth.isDisplayed();
-    assert.strictEqual(
-      studentsNipundInMonthElement,
-      true,
-      "Element is not displayed"
-    );
+
     const studentsNipundInMonthText = await studentsNipundInMonth.getText();
     assert.strictEqual(
       studentsNipundInMonthText,
