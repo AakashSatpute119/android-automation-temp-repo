@@ -213,6 +213,7 @@ describe("Teacher profile page test cases", function () {
 
   it("Verify count of student assessed in month text and count is visiable", async () => {
     // student assessed in month
+    await refreshScreenByScrollDown(driver);
     const studentsAssessedInMonth = await driver.$(
       teacherFlowLocators.countOfStudentAssesedInMonth
     );
@@ -233,6 +234,7 @@ describe("Teacher profile page test cases", function () {
 
   it("Verify count of student nipun in month text and count is visiable", async () => {
     // nipun students in month
+    await refreshScreenByScrollDown(driver);
     await driver.setTimeout({ implicit: 20000 });
 
     const studentsNipundInMonth = await driver.$(
