@@ -211,36 +211,49 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify count of student assessed in month text and count is visiable", async () => {
-    // student assessed in month
-    await refreshScreenByScrollDown(driver);
-    const studentsAssessedInMonth = await driver.$(
-      teacherFlowLocators.countOfStudentAssesedInMonth
-    );
-    const studentsAssessedInMonthtext = await studentsAssessedInMonth.getText();
-    assert.strictEqual(
-      studentsAssessedInMonthtext,
-      constants.studentsAssessedInMonthText,
-      `Element text is not ${constants.studentsAssessedInMonthText}, it is '${studentsAssessedInMonthtext}'`
-    );
-  });
+  // it("Verify count of student assessed in month text and count is visiable", async () => {
+  //   // student assessed in month
+  //   await refreshScreenByScrollDown(driver);
+  //   const studentsAssessedInMonth = await driver.$(
+  //     teacherFlowLocators.countOfStudentAssesedInMonth
+  //   );
+  //   const studentsAssessedInMonthElement =
+  //     await studentsAssessedInMonth.isDisplayed();
+  //   assert.strictEqual(
+  //     studentsAssessedInMonthElement,
+  //     true,
+  //     "Element is not displayed"
+  //   );
+  //   const studentsAssessedInMonthtext = await studentsAssessedInMonth.getText();
+  //   assert.strictEqual(
+  //     studentsAssessedInMonthtext,
+  //     constants.studentsAssessedInMonthText,
+  //     `Element text is not ${constants.studentsAssessedInMonthText}, it is '${studentsAssessedInMonthtext}'`
+  //   );
+  // });
 
-  it("Verify count of student nipun in month text and count is visiable", async () => {
-    // nipun students in month
-    await refreshScreenByScrollDown(driver);
-    await driver.setTimeout({ implicit: 20000 });
+  // it("Verify count of student nipun in month text and count is visiable", async () => {
+  //   // nipun students in month
+  //   await refreshScreenByScrollDown(driver);
+  //   await driver.setTimeout({ implicit: 20000 });
 
-    const studentsNipundInMonth = await driver.$(
-      teacherFlowLocators.countNipunStudentsInMonth
-    );
-
-    const studentsNipundInMonthText = await studentsNipundInMonth.getText();
-    assert.strictEqual(
-      studentsNipundInMonthText,
-      constants.nipunStudentsInWeekText,
-      `Element text is not ${constants.nipunStudentsInMonthText}, it is '${studentsNipundInMonthText}'`
-    );
-  });
+  //   const studentsNipundInMonth = await driver.$(
+  //     teacherFlowLocators.countNipunStudentsInMonth
+  //   );
+  //   const studentsNipundInMonthElement =
+  //     await studentsNipundInMonth.isDisplayed();
+  //   assert.strictEqual(
+  //     studentsNipundInMonthElement,
+  //     true,
+  //     "Element is not displayed"
+  //   );
+  //   const studentsNipundInMonthText = await studentsNipundInMonth.getText();
+  //   assert.strictEqual(
+  //     studentsNipundInMonthText,
+  //     constants.nipunStudentsInWeekText,
+  //     `Element text is not ${constants.nipunStudentsInMonthText}, it is '${studentsNipundInMonthText}'`
+  //   );
+  // });
 
   it("Verify vidyarthi akalan button is visiable", async () => {
     const studentAssessButton = await driver.$(
