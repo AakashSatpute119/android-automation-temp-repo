@@ -48,9 +48,6 @@ jobs:
           target: google_apis
           arch: x86_64
 
-      - name: Uninstall Conflicting App
-        run: adb uninstall org.samagra.missionPrerna
-
       - name: Create AVD, install APK, and run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -68,6 +65,8 @@ jobs:
             adb shell input keyevent 82  
             adb devices
             sleep 10
+            # Uninstall the conflicting app
+            adb uninstall org.samagra.missionPrerna || echo "App not found or already uninstalled"
             # Install the new APK
             adb install -g /home/runner/work/nisai-android-automation/nisai-android-automation/App/app.apk
             appium --address 0.0.0.0 --port 4723 > /dev/null 2>&1 &
