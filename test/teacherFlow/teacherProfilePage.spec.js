@@ -1,5 +1,5 @@
 import { remote } from "webdriverio";
-import assert from "assert";
+import assert, { doesNotReject } from "assert";
 import * as tAndCLocators from "../../constants/locators/termsAndCondition.js";
 import * as constants from "../../constants/constants.js";
 import { getWdOpts } from "../../utils/wdOptions.js";
@@ -9,7 +9,7 @@ import { refreshScreenByScrollDown } from "../../utils/refresh.js";
 
 let driver;
 
-describe("Teacher profile page test cases", function () {
+describe("[Teacher Flow] Profile page test cases", function () {
   this.timeout(100000);
 
   before(async function () {
@@ -42,7 +42,7 @@ describe("Teacher profile page test cases", function () {
 
   // test cases
 
-  it("Verify Teacher profile is logged in successfully ", async () => {
+  it("TF_TC1_Verify Teacher profile is logged in successfully ", async () => {
     const teacherProfileText = await driver.$(
       teacherFlowLocators.teacherProfileText
     );
@@ -57,7 +57,7 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify Nipun Lakshya app title is visiable in header on teacher profile page", async () => {
+  it("TF_TC2_Verify Nipun Lakshya app title is visiable in header on teacher profile page", async () => {
     const appName = await driver.$(teacherFlowLocators.nipunLakshyaAppTitle);
     // Verify the element exists
     const isElementDisplayed = await appName.isDisplayed();
@@ -70,7 +70,7 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify app version is displayed in header", async () => {
+  it("TF_TC3_Verify app version is displayed in header", async () => {
     const appVersion = await driver.$(teacherFlowLocators.appVersion);
     // Verify the element exists
     const isElementDisplayed = await appVersion.isDisplayed();
@@ -83,13 +83,13 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify chatbot icon is visiable", async () => {
+  it("TF_TC4_Verify chatbot icon is visiable", async () => {
     const chatbotIcon = await driver.$(teacherFlowLocators.chatbotIcon);
     const isElementDisplayed = await chatbotIcon.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");
   });
 
-  it("Verify teacher profile details are visiable (name,district,udise,block)", async () => {
+  it("TF_TC5_Verify teacher profile details are visiable (name,district,udise,block)", async () => {
     // name
     const nameText = await driver.$(teacherFlowLocators.teacherName);
     const isNameDisplayed = await nameText.isDisplayed();
@@ -137,7 +137,7 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify Shikshak Aklan Saransh label text is visiable.", async () => {
+  it("TF_TC6_Verify Shikshak Aklan Saransh label text is visiable.", async () => {
     const teacherAnkalanSaransh = await driver.$(
       teacherFlowLocators.teacherAnkalanSaransh
     );
@@ -151,7 +151,7 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify vartman sapata aklan text is visiable ", async () => {
+  it("TF_TC7_Verify vartman sapata aklan text is visiable ", async () => {
     //weekly student assessed vartaman sapta text
     const currentMonthAnkalanElement = await driver.$(
       teacherFlowLocators.currentMonthAnkalan
@@ -172,7 +172,7 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  it("Verify count of student assessed in week text and count is visiable", async () => {
+  it("TF_TC8_Verify count of student assessed in week text and count is visiable", async () => {
     // student assessed in week text
     const studentsAssessedInWeek = await driver.$(
       teacherFlowLocators.countOfStudentAssesedInWeek
@@ -191,7 +191,8 @@ describe("Teacher profile page test cases", function () {
       `Element text is not ${constants.studentsAssessedInWeekText}, it is '${studentsAssessedInWeektext}'`
     );
   });
-  it("Verify count of student nipun in week text and count is visiable", async () => {
+
+  it("TF_TC9_Verify count of student nipun in week text and count is visiable", async () => {
     // nipun students in week
     const studentsNipundInWeek = await driver.$(
       teacherFlowLocators.countNipunStudentsInWeek
@@ -211,7 +212,7 @@ describe("Teacher profile page test cases", function () {
     );
   });
 
-  // it("Verify count of student assessed in month text and count is visiable", async () => {
+  // it("TF_TC10_Verify count of student assessed in month text and count is visiable", async () => {
   //   // student assessed in month
   //   await refreshScreenByScrollDown(driver);
   //   const studentsAssessedInMonth = await driver.$(
@@ -232,7 +233,7 @@ describe("Teacher profile page test cases", function () {
   //   );
   // });
 
-  // it("Verify count of student nipun in month text and count is visiable", async () => {
+  // it("TF_TC11_Verify count of student nipun in month text and count is visiable", async () => {
   //   // nipun students in month
   //   await refreshScreenByScrollDown(driver);
   //   await driver.setTimeout({ implicit: 20000 });
@@ -255,7 +256,7 @@ describe("Teacher profile page test cases", function () {
   //   );
   // });
 
-  it("Verify vidyarthi akalan button is visiable", async () => {
+  it("TF_TC12_Verify vidyarthi akalan button is visiable", async () => {
     const studentAssessButton = await driver.$(
       teacherFlowLocators.studentAkalanButton
     );
@@ -272,7 +273,7 @@ describe("Teacher profile page test cases", function () {
       `Element text is not ${constants.vidyarthiAkalanButoonText}, it is '${studentAssessButtonText}'`
     );
   });
-  it("Verify school summary button is visiable", async () => {
+  it("TF_TC13_Verify school summary button is visiable", async () => {
     const schoolAssessmentSummaryButton = await driver.$(
       teacherFlowLocators.schoolAssessmentSummaryButton
     );
@@ -293,10 +294,7 @@ describe("Teacher profile page test cases", function () {
   });
 });
 
-
-
-
-describe("Teacher school summary page", function () {
+describe("[Teacher Flow] School summary page", function () {
   this.timeout(100000);
 
   before(async function () {
@@ -307,7 +305,7 @@ describe("Teacher school summary page", function () {
 
   // test cases
 
-  it("Verify Teacher able to click on school summary button and redirected to summary page", async () => {
+  it("TF_TC14_Verify Teacher able to click on school summary button and redirected to summary page", async () => {
     const headerTextSchoolAkalanSaransh = await driver.$(teacherFlowLocators.headerTextSchoolAkalanSaransh);
     const isDisplayed = await headerTextSchoolAkalanSaransh.isDisplayed();
     assert.strictEqual(isDisplayed, true, "Element is not displayed");
@@ -319,7 +317,7 @@ describe("Teacher school summary page", function () {
     );
   });
 
-  it("Verify able to see grade 1,2,3 and all grade buttons and it is clickable", async () => {
+  it("TF_TC15_Verify able to see grade 1,2,3 and all grade buttons and it is clickable", async () => {
     //grade 1
     const grade1Label = await driver.$(teacherFlowLocators.grade1Label);
     const grade1LabelisDisplayed = await grade1Label.isDisplayed();
@@ -369,14 +367,14 @@ describe("Teacher school summary page", function () {
     await allGradesLabel.click();
   });
  
-  it("Verify summary (month) table is displayed on page", async () => {
+  it("TF_TC16_Verify summary (month) table is displayed on page", async () => {
     const monthTable = await driver.$(teacherFlowLocators.monthTable);
     const isDisplayed = await monthTable.isDisplayed();
     assert.strictEqual(isDisplayed, true, "Element is not displayed");
 
   });
 
-  it("Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 1 is selected", async () => {
+  it("TF_TC17_Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 1 is selected", async () => {
     // month column
     const month = await driver.$(teacherFlowLocators.month);
     const monthisDisplayed = await month.isDisplayed();
@@ -426,7 +424,7 @@ describe("Teacher school summary page", function () {
 
 
  
-  it("Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 2 is selected", async () => {
+  it("TF_TC18_Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 2 is selected", async () => {
     await driver.$(teacherFlowLocators.grade2Label).click();
     // month column
    const month = await driver.$(teacherFlowLocators.month);
@@ -475,7 +473,7 @@ describe("Teacher school summary page", function () {
 
   });
 
-  it("Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 3 is selected", async () => {
+  it("TF_TC19_Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 3 is selected", async () => {
     await driver.$(teacherFlowLocators.grade3Label).click();
     // month column
    const month = await driver.$(teacherFlowLocators.month);
@@ -528,3 +526,114 @@ describe("Teacher school summary page", function () {
 
  
 });
+
+
+describe("[Teacher Flow] Student listing page",function(){
+  this.timeout(100000);
+  before(async function () {
+    // refresh on screen
+    await refreshScreenByScrollDown(driver);
+    await driver.$(teacherFlowLocators.backButtonOnSchoolSummaryPage).click();
+    await driver.$(teacherFlowLocators.studentAkalanButton).click();
+  });
+
+  it("TF_TC20_Verify clicking on vidhyarthi akalan button landed on student listing page ", async () => {
+    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+    const isDisplayed = await selectGradeElement.isDisplayed();
+    assert.strictEqual(isDisplayed, true, "Element is not displayed");
+    const text = await selectGradeElement.getText();
+    assert.strictEqual(
+      text,
+      constants.selectGradeText,
+      `Element text is not ${constants.selectGradeText}, it is '${text}'`
+    );
+  });
+
+  it("TF_TC21_Verify able to see grade 1,2,3 and all grade buttons and it is clickable", async () => {
+    //grade 1
+    const grade1Label = await driver.$(teacherFlowLocators.grade1Label);
+    await grade1Label.click();
+    const grade1LabelisDisplayed = await grade1Label.isDisplayed();
+    assert.strictEqual(grade1LabelisDisplayed, true, "Element is not displayed");
+    const textGrade1Label = await grade1Label.getText();
+    assert.strictEqual(
+      textGrade1Label,
+      constants.grade1LabelText,
+      `Element text is not ${constants.grade1LabelText}, it is '${textGrade1Label}'`
+    );
+
+    //grade 2
+    const grade2Label = await driver.$(teacherFlowLocators.grade2Label);
+    await grade2Label.click();
+    const grade2LabelisDisplayed = await grade2Label.isDisplayed();
+    assert.strictEqual(grade2LabelisDisplayed, true, "Element is not displayed");
+    const textGrade2Label = await grade2Label.getText();
+    assert.strictEqual(
+      textGrade2Label,
+      constants.grade2LabelText,
+      `Element text is not ${constants.grade2LabelText}, it is '${textGrade2Label}'`
+    );
+    await grade2Label.click();
+    
+    //grade 3
+    const grade3Label = await driver.$(teacherFlowLocators.grade3Label);
+    await grade3Label.click();
+    const grade3LabelisDisplayed = await grade3Label.isDisplayed();
+    assert.strictEqual(grade3LabelisDisplayed, true, "Element is not displayed");
+    const textGrade3Label = await grade3Label.getText();
+    assert.strictEqual(
+      textGrade3Label,
+      constants.grade3LabelText,
+      `Element text is not ${constants.grade3LabelText}, it is '${textGrade3Label}'`
+    );
+
+  });
+
+  it("TE_TC23_Verify able to see list of the students when grade 1 is selected",async()=>{
+    await driver.$(teacherFlowLocators.grade1Label).click();
+    const studentCards = await driver.$(teacherFlowLocators.firstStudentCard)
+    const isDisplayed = await studentCards.isDisplayed();
+    assert.strictEqual(isDisplayed, true, "Element is not displayed");
+  })
+
+  it("TE_TC24_Verify able to see list of the students when grade 2 is selected",async()=>{
+    await driver.$(teacherFlowLocators.grade2Label).click();
+    const studentCards = await driver.$(teacherFlowLocators.firstStudentCard)
+    const isDisplayed = await studentCards.isDisplayed();
+    assert.strictEqual(isDisplayed, true, "Element is not displayed");
+  })
+
+  it("TE_TC25_Verify able to see list of the students when grade 3 is selected",async()=>{
+    await driver.$(teacherFlowLocators.grade3Label).click();
+    const studentCards = await driver.$(teacherFlowLocators.firstStudentCard)
+    const isDisplayed = await studentCards.isDisplayed();
+    assert.strictEqual(isDisplayed, true, "Element is not displayed");
+  })
+
+  it("TE_TC26_Verify able to see Student name,Roll number,last assessed date and akalan kare button,",async()=>{
+    await driver.$(teacherFlowLocators.grade1Label).click();
+    //student name
+    const studentName = await driver.$(teacherFlowLocators.studentName)
+    const studentNameIsDisplayed = await studentName.isDisplayed();
+    assert.strictEqual(studentNameIsDisplayed, true, "Element is not displayed");
+
+    //roll number 
+    const rollNumber = await driver.$(teacherFlowLocators.studentRollNo)
+    const rollNumberIsDisplayed = await rollNumber.isDisplayed();
+    assert.strictEqual(rollNumberIsDisplayed, true, "Element is not displayed");
+
+    
+    //Last assessed date
+    const studentLastAssessedDate = await driver.$(teacherFlowLocators.studentLastAssessedDate)
+    const studentLastAssessedDateIsDisplayed = await studentLastAssessedDate.isDisplayed();
+    assert.strictEqual(studentLastAssessedDateIsDisplayed, true, "Element is not displayed");
+    
+    //aakalan kare button 
+    const takeAssessmentButton = await driver.$(teacherFlowLocators.takeAssessmentButton)
+    const takeAssessmentButtonIsDisplayed = await takeAssessmentButton.isDisplayed();
+    assert.strictEqual(takeAssessmentButtonIsDisplayed, true, "Element is not displayed");
+
+  })
+  
+
+})

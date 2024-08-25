@@ -51,11 +51,11 @@ To register on Prerna portal, please call the DC Training/Quality in BSA office 
 
 // teacher profile page :
 export const nipunLakshyaAppTitle = "निपुण लक्ष्य ऐप ";
-export const appVersiontext = "V 2.3.2";
+export const appVersiontext = "V 2.4.0_test_v21";
 export const teacherValidMobileNumber = "8668727053";
 export const defaultOtp = "0000";
 export const teacherProfileText = "शिक्षक प्रोफाइल";
-export const nameText = "नाम :   Prod Teacher ";
+export const nameText = "नाम :   Dev Teacher ";
 export const udiseText = "UDISE :   9150202302";
 export const districtText = "जनपद :   AGRA";
 export const blockText = "ब्लॉक :   Achhnera";
@@ -80,3 +80,6 @@ export const monthText="माह"
 export const totalStudentsText="कुल\nविद्यार्थी"
 export const studentsAssessedText="विद्यार्थी\nआकलन किए"
 export const nipunStudentsText="विद्यार्थी\nनिपुण"
+
+//student listing page 
+export const selectGradeText="कृपया एक कक्षा चुनें"

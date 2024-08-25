@@ -1,25 +1,25 @@
 // Term and conditions page elemets
 
 export const privacyPolicyHeader =
-  '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/privacy_header"]';
+  '//android.widget.TextView[@resource-id="org.samagra.nisai:id/privacy_header"]';
 
 export const privacyPolicy =
-  '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/privacy_policy_view"]';
+  '//android.widget.TextView[@resource-id="org.samagra.nisai:id/privacy_policy_view"]';
 
 export const iAgree =
-  '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/i_accept_text"]';
+  '//android.widget.TextView[@resource-id="org.samagra.nisai:id/i_accept_text"]';
 
 export const checkBox =
-  '//android.widget.CheckBox[@resource-id="org.samagra.missionPrerna:id/privacy_check"]';
+  '//android.widget.CheckBox[@resource-id="org.samagra.nisai:id/privacy_check"]';
 
 export const privacyScoller =
-  '//android.widget.ImageView[@resource-id="org.samagra.missionPrerna:id/privacy_scroller"]';
+  '//android.widget.ImageView[@resource-id="org.samagra.nisai:id/privacy_scroller"]';
 
 export const aageBadheButton =
-  '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/accept_policy"]';
+  '//android.widget.Button[@resource-id="org.samagra.nisai:id/accept_policy"]';
 
 export const popupMessageOnAageBadhe =
-  '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/title_tv"]';
+  '//android.widget.TextView[@resource-id="org.samagra.nisai:id/title_tv"]';
 
 export const okButton =
-  '//android.widget.Button[@resource-id="org.samagra.missionPrerna:id/cta_button"]';
+  '//android.widget.Button[@resource-id="org.samagra.nisai:id/cta_button"]';
