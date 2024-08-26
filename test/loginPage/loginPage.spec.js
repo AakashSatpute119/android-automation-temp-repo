@@ -26,24 +26,24 @@ describe("Login Page Test", function () {
     }
   });
 
-  it("Verify nipun lakshya app logo and tittle is displayed on login page", async () => {
+  it("LP_TC1_Verify nipun lakshya app logo and tittle is displayed on login page", async () => {
     const logoAndAppName = await driver.$(
       loginPageLocators.nipunlakshyaTextAndLogoInHeader
     );
     await logoAndAppName.isDisplayed();
   });
 
-  it("Verify app version is displayed", async () => {
+  it("LP_TC2_Verify app version is displayed", async () => {
     const appVersion = await driver.$(loginPageLocators.appVersion);
     await appVersion.isDisplayed();
   });
 
-  it("Verify teacher logo image is displayed", async () => {
+  it("LP_TC3_Verify teacher logo image is displayed", async () => {
     const teacherLogoImg = await driver.$(loginPageLocators.teacherLogoImg);
     await teacherLogoImg.isDisplayed();
   });
 
-  it("Verify mentor,Teacher,Examiner title text is visiable on page", async () => {
+  it("LP_TC4_Verify mentor,Teacher,Examiner title text is visiable on page", async () => {
     const titleTextOnLoginPage = await driver.$(loginPageLocators.titleOnPage);
     const isElementDisplayed = await titleTextOnLoginPage.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");
@@ -55,7 +55,7 @@ describe("Login Page Test", function () {
     );
   });
 
-  it("Verify enter register number text is visiable", async () => {
+  it("LP_TC5_Verify enter register number text is visiable", async () => {
     const enterRegisterNumber = await driver.$(
       loginPageLocators.enterRegisterNumber
     );
@@ -69,7 +69,7 @@ describe("Login Page Test", function () {
     );
   });
 
-  it("Verify mobile number input box is visiable", async () => {
+  it("LP_TC6_Verify mobile number input box is visiable", async () => {
     const mobileNumberInputBox = await driver.$(
       loginPageLocators.mobileNumberInputBox
     );
@@ -83,7 +83,7 @@ describe("Login Page Test", function () {
     );
   });
 
-  it("Verify mobile number not registered ? text is visiable", async () => {
+  it("LP_TC7_Verify mobile number not registered ? text is visiable", async () => {
     const numberNotregisted = await driver.$(
       loginPageLocators.numberNotregisted
     );
@@ -97,7 +97,7 @@ describe("Login Page Test", function () {
     );
   });
 
-  it("Verify helpline number is displayed and enabled", async () => {
+  it("LP_TC8_Verify helpline number is displayed and enabled", async () => {
     const helplineNumber = await driver.$(loginPageLocators.helplineNumber);
     const isElementDisplayed = await helplineNumber.isDisplayed();
     const isElementEnable = await helplineNumber.isEnabled();
@@ -110,7 +110,7 @@ describe("Login Page Test", function () {
     );
   });
 
-  it("Verify mobile number field should accept only 10 digits", async () => {
+  it("LP_TC9_Verify mobile number field should accept only 10 digits", async () => {
     const mobileNumberInputBox = await driver.$(
       loginPageLocators.mobileNumberInputBox
     );
@@ -132,7 +132,7 @@ describe("Login Page Test", function () {
     );
   });
 
-  it("Verify users gets popup when mobile number is invalid", async () => {
+  it("LP_TC10_Verify users gets popup when mobile number is invalid", async () => {
     const mobileNumberInputBox = await driver.$(
       loginPageLocators.mobileNumberInputBox
     );
@@ -175,7 +175,7 @@ describe("Login Page Test", function () {
     await driver.$(loginPageLocators.okButton).click();
   });
 
-  it("Verify users gets popup when mobile number is not registered on prerna portal.", async () => {
+  it("LP_TC11_Verify users gets popup when mobile number is not registered on prerna portal.", async () => {
     const mobileNumberInputBox = await driver.$(
       loginPageLocators.mobileNumberInputBox
     );

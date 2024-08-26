@@ -19,7 +19,7 @@ describe("Terms and conditions page test", function () {
     }
   });
 
-  it("Verify able to see privacy policy title in header", async () => {
+  it("T&C_TC1_Verify able to see privacy policy title in header", async () => {
     await driver.setTimeout({ implicit: 60000 });
     const privacyPolicyHeader = await driver.$(
       tAndCLocators.privacyPolicyHeader
@@ -34,7 +34,7 @@ describe("Terms and conditions page test", function () {
     );
   });
 
-  it("Verify privacy policy text is visiable on page", async () => {
+  it("T&C_TC2_Verify privacy policy text is visiable on page", async () => {
     const privacyPolicy = await driver.$(tAndCLocators.privacyPolicy);
     const isElementDisplayed = await privacyPolicy.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");
@@ -46,14 +46,14 @@ describe("Terms and conditions page test", function () {
     );
   });
 
-  it("Verify slideDown arrow is working", async () => {
+  it("T&C_TC3_Verify slideDown arrow is working", async () => {
     const privacyScoller = driver.$(tAndCLocators.privacyScoller);
     const isElementDisplayed = await privacyScoller.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");
     await privacyScoller.click();
   });
 
-  it("Verify able to see i agree text and checkbox for accept t&c", async () => {
+  it("T&C_TC4_Verify able to see i agree text and checkbox for accept t&c", async () => {
     const iAgree = await driver.$(tAndCLocators.iAgree);
     const isElementDisplayed = await iAgree.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");
@@ -71,7 +71,7 @@ describe("Terms and conditions page test", function () {
     await checkBox.click();
   });
 
-  it("Verify user gets popup when try to continue without accepting t&c", async () => {
+  it("T&C_TC5_Verify user gets popup when try to continue without accepting t&c", async () => {
     const checkBox = await driver.$(tAndCLocators.checkBox);
     await checkBox.click();
     await driver.$(tAndCLocators.aageBadheButton).click();

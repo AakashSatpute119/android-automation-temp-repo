@@ -83,3 +83,9 @@ export const nipunStudentsText="विद्यार्थी\nनिपुण"
 
 //student listing page 
 export const selectGradeText="कृपया एक कक्षा चुनें"
+export const nipunText="निपुण: "
+export const notNipunText="निपुण नहीं है: "
+export const penddingToAssess="आकलन नहीं हुआ: "
+export const studentNameNotInListText="विद्यार्थी का नाम सूची में नहीं है?"
+export const anynoumousStudentTakeAssessmentButtonText="चयन बिना आकलन करें !"
+export const akalanText="आकलन"

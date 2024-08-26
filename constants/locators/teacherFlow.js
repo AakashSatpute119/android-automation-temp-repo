@@ -11,12 +11,21 @@ export const block = `//android.widget.TextView[@resource-id="org.samagra.nisai:
 export const teacherAnkalanSaransh = `//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvSummaryLabel"]`;
 export const currentMonthAnkalan =
   '//android.widget.TextView[@resource-id="org.samagra.nisai:id/periodTextView" and @text="वर्तमान सप्ताह आकलन"]';
+
+
+//week
 export const countOfStudentAssesedInWeek =
   '(//android.widget.TextView[@resource-id="org.samagra.nisai:id/labelTextView"])[1]';
 export const countNipunStudentsInWeek =
   '(//android.widget.TextView[@resource-id="org.samagra.nisai:id/labelTextView"])[2]';
-export const countNipunStudentsInMonth = `(//android.widget.TextView[@resource-id="org.samagra.nisai:id/labelTextView"])[4]`;
-export const countOfStudentAssesedInMonth = `(//android.widget.TextView[@resource-id="org.samagra.nisai:id/labelTextView"])[3]`;
+//month
+export const countNipunStudentsInMonth =
+ `(//android.widget.TextView[@resource-id="org.samagra.nisai:id/labelTextView"])[4]`;
+export const countOfStudentAssesedInMonth = 
+ `(//android.widget.TextView[@resource-id="org.samagra.nisai:id/labelTextView"])[3]`;
+
+
+
 export const studentAkalanButton = `//android.widget.Button[@resource-id="org.samagra.nisai:id/mtl_btn_setup_assessment"]`;
 export const schoolAssessmentSummaryButton = `//android.widget.Button[@resource-id="org.samagra.nisai:id/mtl_btn_school_assessment_summary"]`;
 
@@ -49,5 +58,17 @@ export const studentName=`//*[@resource-id="org.samagra.nisai:id/tvStudentName"]
 export const studentRollNo=`//*[@resource-id="org.samagra.nisai:id/tvStudentRollNo"]`
 export const studentLastAssessedDate=`//*[@resource-id="org.samagra.nisai:id/tvStudentLastAssessmentDate"]`
 export const takeAssessmentButton=`//*[@resource-id="org.samagra.nisai:id/btTakeAssessment"]`
-
-
+export const nipunTextElement=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvNipunText" and @text="निपुण: "]`
+export const nipunCount=`(//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvNipunCount"])[1]`
+export const notNipunTextElement=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvNipunText" and @text="निपुण नहीं है: "]`
+export const notNipunCount=`(//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvNipunCount"])[2]`
+export const pendingAssessmentText=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvNipunText" and @text="आकलन नहीं हुआ: "]`
+export const pendingAssessmentCount=`(//android.widget.TextView[@resource-id="org.samagra.nisai:id/tvNipunCount"])[3]`
+export const monthText=`//*[@resource-id="org.samagra.nisai:id/tvMonth"]`
+export const previousMonth=`//*[@resource-id="org.samagra.nisai:id/ivPreviousMonth"]`  
+export const nextMonth=`//*[@resource-id="org.samagra.nisai:id/ivNextMonth"]`
+export const refreshButton=`//android.widget.Button[@content-desc="Refresh"]`
+export const studentListingToHomePageBackButton=`//android.widget.ImageButton[@content-desc="Navigate up"]`
+export const studentNameNotInListTextElement=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/help_tv"]`
+export const anynoumousStudentTakeAssessmentButton=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/take_assessment_btn"]`
+export const akalanTextInHeaderElement=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/title"]`
