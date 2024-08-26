@@ -213,7 +213,8 @@ describe("[Teacher Flow] Profile page test cases", function () {
     );
   });
 
-  it("TF_TC10_Verify count of student assessed count is visiable", async () => {
+  it.skip("TF_TC10_Verify count of student assessed count is visiable", async () => {
+    console.log("Can be run locally only");
     // student assessed in month
     await refreshScreenByScrollDown(driver);
     const studentsAssessedInMonth = await driver.$(
@@ -229,7 +230,8 @@ describe("[Teacher Flow] Profile page test cases", function () {
 
   });
 
-  it("TF_TC11_Verify count of student nipun in month text and count is visiable", async () => {
+  it.skip("TF_TC11_Verify count of student nipun in month text and count is visiable", async () => {
+    console.log("Can be run locally only")
     // nipun students in month
     await refreshScreenByScrollDown(driver);
     await driver.setTimeout({ implicit: 20000 });
