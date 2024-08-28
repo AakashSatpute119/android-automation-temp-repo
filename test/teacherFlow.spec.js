@@ -1,12 +1,14 @@
 import { remote } from "webdriverio";
 import assert, { doesNotReject } from "assert";
-import * as tAndCLocators from "../../constants/locators/termsAndCondition.js";
-import * as constants from "../../constants/constants.js";
-import { getWdOpts } from "../../utils/wdOptions.js";
-import * as loginPageLocators from "../../constants/locators/loginPage.js";
-import * as teacherFlowLocators from "../../constants/locators/teacherFlow.js";
-import { refreshScreenByScrollDown } from "../../utils/refresh.js";
-import { scrollUp } from "../../utils/refresh.js";
+import * as tAndCLocators from "../constants/locators/termsAndCondition.js";
+import * as constants from "../constants/constants.js";
+import { getWdOpts } from "../utils/wdOptions.js";
+import * as loginPageLocators from "../constants/locators/loginPage.js";
+import * as teacherFlowLocators from "../constants/locators/teacherFlow.js";
+import { refreshScreenByScrollDown ,scrollUp} from "../utils/gestures.js";
+import { fillOdkForm } from "../utils/fillOdkForm.js";
+import * as odkLocators from "../constants/locators/odkFlow.js"
+import {selectRandomStudent} from "../utils/commonFunctions.js"
  
 let driver;
 
@@ -265,6 +267,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
       `Element text is not ${constants.vidyarthiAkalanButoonText}, it is '${studentAssessButtonText}'`
     );
   });
+  
   it("TF_TC13_Verify school summary button is visiable", async () => {
     const schoolAssessmentSummaryButton = await driver.$(
       teacherFlowLocators.schoolAssessmentSummaryButton
@@ -513,10 +516,12 @@ describe("[Teacher Flow] School summary page", function () {
    );
  
   });
-
-
-
- 
+  after(async function () {
+    if (driver) {
+      await refreshScreenByScrollDown(driver);
+      await driver.$(teacherFlowLocators.backButtonOnSchoolSummaryPage).click();
+    }
+  });
 });
 
 
@@ -524,8 +529,6 @@ describe("[Teacher Flow] Student listing page",function(){
   this.timeout(100000);
   before(async function () {
     // refresh on screen
-    await refreshScreenByScrollDown(driver);
-    await driver.$(teacherFlowLocators.backButtonOnSchoolSummaryPage).click();
     await driver.$(teacherFlowLocators.studentAkalanButton).click();
   });
 
@@ -971,10 +974,27 @@ describe("[Teacher Flow] Student listing page",function(){
      constants.akalanText,
     `Element text is not ${constants.akalanText}, it is '${akalanText}'`
   );
-
-
   })
+  after(async function () {
+    if (driver) {
+      await driver.$(teacherFlowLocators.studentListingToHomePageBackButton).click();
+    }
+  });
 
+})
+
+describe("[Teacher Flow] Assessment flow", function () {
+  this.timeout(100000);
+
+  it("TF_TC33_Verify able take assessment for grade 1 student",async()=>{
+    await driver.$(teacherFlowLocators.studentAkalanButton).click();
+    await driver.$(teacherFlowLocators.grade1Label).click(); 
+    await selectRandomStudent(driver);
+    await fillOdkForm(driver);
+    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+    await fillOdkForm(driver);
+    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+  })
 
 
 

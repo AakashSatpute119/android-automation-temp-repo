@@ -1,12 +1,12 @@
 import { remote } from "webdriverio";
 import assert from "assert";
-import * as tAndCLocators from "../../constants/locators/termsAndCondition.js";
-import * as constants from "../../constants/constants.js";
-import { getWdOpts } from "../../utils/wdOptions.js";
+import * as tAndCLocators from "../constants/locators/termsAndCondition.js";
+import * as constants from "../constants/constants.js";
+import { getWdOpts } from "../utils/wdOptions.js";
 
 let driver;
 
-describe("Terms and conditions page test", function () {
+describe("[T&C] Terms and conditions page test", function () {
   this.timeout(100000);
 
   before(async function () {

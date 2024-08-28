@@ -1,0 +1,1 @@
+export const nextButtonBtwTwoForms=`//android.widget.Button[@resource-id="org.samagra.nisai:id/finalize"]`
