@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha 'test/**/*.js' --reporter mochawesome"
+    "test": "mocha 'test/**/*.js' --reporter mochawesome --reporter-options reportFilename=nl_test_report"
   },
   "keywords": [],
   "author": "",

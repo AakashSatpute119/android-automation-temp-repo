@@ -72,3 +72,8 @@ export const studentListingToHomePageBackButton=`//android.widget.ImageButton[@c
 export const studentNameNotInListTextElement=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/help_tv"]`
 export const anynoumousStudentTakeAssessmentButton=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/take_assessment_btn"]`
 export const akalanTextInHeaderElement=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/title"]`
+
+// student result page 
+export const assessNextStudent=`//android.widget.Button[@resource-id="org.samagra.nisai:id/cta"]`
+export const studentNameOnResultPage=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/tv_name"]`
+export const assessmenttakenDateOnResultPage=`//android.widget.TextView[@resource-id="org.samagra.nisai:id/tv_date"]`

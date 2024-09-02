@@ -30,10 +30,14 @@ export const okButton =
   '//android.widget.Button[@resource-id="org.samagra.nisai:id/cta_button"]';
 
 export const unableToSendOtp = `//android.widget.TextView[@resource-id="org.samagra.nisai:id/title_tv"]`;
+
 export const numberIsNotRegisteredOnPernaPortal = `//android.widget.TextView[@resource-id="org.samagra.nisai:id/description_tv"]`;
+
 export const otpInputBox =
   '-android uiautomator:new UiSelector().className("android.widget.EditText").instance(0)';
-export const submitOtpButton =
+
+  export const submitOtpButton =
   '//android.widget.Button[@resource-id="org.samagra.nisai:id/validate_button"]';
-export const buttonOnLoggedInsuccessfullyPopUp =
+
+  export const buttonOnLoggedInsuccessfullyPopUp =
   '//android.widget.Button[@resource-id="org.samagra.nisai:id/cta_button"]';

@@ -1,3 +1,4 @@
+import * as teacherFlowLocators from "../constants/locators/teacherFlow.js";
 
 
 export async function selectRandomStudent(driver) {
@@ -41,3 +42,13 @@ export async function selectRandomStudent(driver) {
     }
 }
 
+
+export async function studentData (driver){
+    const studentName=await driver.$(teacherFlowLocators.studentNameOnResultPage).getText();
+    const assessmenttakenDateOnResultPage=await driver.$(teacherFlowLocators.assessmenttakenDateOnResultPage).getText();
+    console.log("Student Name: "+studentName);
+    console.log("Assessed Date"+assessmenttakenDateOnResultPage);
+    const currentUtcTimestamp = new Date().toISOString();
+    console.log(currentUtcTimestamp);
+
+}

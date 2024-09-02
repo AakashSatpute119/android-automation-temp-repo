@@ -1,4 +1,4 @@
-
+// refresh on profile screen
 export const refreshScreenByScrollDown = async (driver) => {
   const { width, height } = await driver.getWindowSize();
   const anchorPercentage = 50;
@@ -34,7 +34,7 @@ export const refreshScreenByScrollDown = async (driver) => {
   await driver.pause(3000);
 };
 
-
+// scroll on student list page
 export const scrollUp = async (driver) => {
   const { width, height } = await driver.getWindowSize();
   const anchorPercentage = 50;
@@ -53,10 +53,10 @@ export const scrollUp = async (driver) => {
       actions: [
         { type: "pointerMove", duration: 0, x: anchor, y: startPoint }, // Start near the bottom
         { type: "pointerDown", button: 0 },
-        { type: "pause", duration: 1000 },
+        { type: "pause", duration: 500   },
         {
           type: "pointerMove",
-          duration: 1000,
+          duration: 500,
           origin: "pointer",
           x: 0,
           y: endPoint - startPoint, // Move upwards
@@ -66,49 +66,10 @@ export const scrollUp = async (driver) => {
     },
   ]);
 
-  await driver.pause(3000);
+  await driver.pause(500);
 };
 
-export const scrollUpInOdk = async (driver) => {
-  try {
-    const { width, height } = await driver.getWindowSize();
-
-    const startX = width / 2; // Middle of the screen horizontally
-    const startY = height * 0.5; // Middle of the screen vertically
-    const endX = startX; // Keep the x-coordinate the same
-    const endY = height * 0.2; // End closer to the top of the screen
-
-    // Define the scroll area to cover the full screen
-    const scrollArea = {
-      left: 0, // Start at the left edge
-      top: 0,  // Start at the top edge
-      width: width, // Full width of the screen
-      height: height, // Full height of the screen
-    };
-
-    // Perform the scroll gesture
-    await driver.execute('mobile: scrollGesture', {
-      direction: 'up',
-      startX: startX,
-      startY: startY,
-      endX: endX,
-      endY: endY,
-      percent: 0.5, // Scroll by 50% of the screen height
-      left: scrollArea.left,
-      top: scrollArea.top,
-      width: scrollArea.width,
-      height: scrollArea.height,
-      speed: 1000, // Optional: speed of the scroll gesture
-    });
-
-    await driver.pause(2000); // Optional pause to allow the screen to settle
-
-  } catch (error) {
-    console.error('Error while performing scroll gesture:', error.message);
-  }
-};
-
-
+// swipe up in odk
 /**
  * Performs a swipe gesture on the screen.
  *
@@ -158,5 +119,46 @@ export const performSwipe = async (driver, startX, startY, endX, endY, duration 
   }
 };
 
+
+
+
+// export const scrollUpInOdk = async (driver) => {
+//   try {
+//     const { width, height } = await driver.getWindowSize();
+
+//     const startX = width / 2; // Middle of the screen horizontally
+//     const startY = height * 0.5; // Middle of the screen vertically
+//     const endX = startX; // Keep the x-coordinate the same
+//     const endY = height * 0.2; // End closer to the top of the screen
+
+//     // Define the scroll area to cover the full screen
+//     const scrollArea = {
+//       left: 0, // Start at the left edge
+//       top: 0,  // Start at the top edge
+//       width: width, // Full width of the screen
+//       height: height, // Full height of the screen
+//     };
+
+//     // Perform the scroll gesture
+//     await driver.execute('mobile: scrollGesture', {
+//       direction: 'up',
+//       startX: startX,
+//       startY: startY,
+//       endX: endX,
+//       endY: endY,
+//       percent: 0.5, // Scroll by 50% of the screen height
+//       left: scrollArea.left,
+//       top: scrollArea.top,
+//       width: scrollArea.width,
+//       height: scrollArea.height,
+//       speed: 1000, // Optional: speed of the scroll gesture
+//     });
+
+//     await driver.pause(2000); // Optional pause to allow the screen to settle
+
+//   } catch (error) {
+//     console.error('Error while performing scroll gesture:', error.message);
+//   }
+// };
 
 
