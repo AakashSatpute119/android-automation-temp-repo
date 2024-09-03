@@ -19,13 +19,13 @@ export async function fillOdkForm(driver) {
 
       const thirdRadioButton = await driver
         .$(
-          '(//android.widget.RadioButton[@resource-id="org.samagra.nisai:id/text_label"])[7]'
+          '(//android.widget.RadioButton[@resource-id="org.samagra.nisai:id/text_label"])[6]'
         )
        await thirdRadioButton.click();
 
       const fourthRadioButton = await driver
         .$(
-          '(//android.widget.RadioButton[@resource-id="org.samagra.nisai:id/text_label"])[10]'
+          '(//android.widget.RadioButton[@resource-id="org.samagra.nisai:id/text_label"])[9]'
         )
        await fourthRadioButton.click();
        await performSwipe(driver, 617, 1783, 622, 757, 1000);
