@@ -80,7 +80,7 @@ export const scrollUp = async (driver) => {
  * @param {number} endY - The ending Y coordinate for the swipe.
  * @param {number} duration - The duration of the swipe in milliseconds.
  */
-export const performSwipe = async (driver, startX, startY, endX, endY, duration = 500) => {
+export const performSwipe = async (driver, startX, startY, endX, endY, duration = 200) => {
   const actions = {
     type: 'pointer',
     id: 'finger1',

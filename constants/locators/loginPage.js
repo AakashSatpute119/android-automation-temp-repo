@@ -41,3 +41,7 @@ export const otpInputBox =
 
   export const buttonOnLoggedInsuccessfullyPopUp =
   '//android.widget.Button[@resource-id="org.samagra.nisai:id/cta_button"]';
+
+
+
+

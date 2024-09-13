@@ -16,6 +16,8 @@ export const getWdOpts = () => {
       "appium:deviceName": deviceName,
       "appium:app": apkPath,
       "appium:autoGrantPermissions": true,
+    //   "noReset": true,  
+    // "fullReset": false 
     },
   };
 };

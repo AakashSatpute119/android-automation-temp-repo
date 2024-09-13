@@ -12,27 +12,20 @@ export async function selectRandomStudent(driver) {
                 return students.length > 0;
             },
             {
-                timeout: 10000, // 10 seconds
+                timeout: 10000, 
                 timeoutMsg: 'No students found after waiting for 10 seconds'
             }
         );
 
-        // Find all matching elements using XPath
+        
         const students = await driver.$$(
             '//android.widget.TextView[@resource-id="org.samagra.nisai:id/btTakeAssessment"]'
         );
-
-        // Determine the number of elements found
         const numberOfStudents = students.length;
 
         if (numberOfStudents > 0) {
-            // Generate a random index
             const randomIndex = Math.floor(Math.random() * numberOfStudents);
-
-            // Log the number of students found and the random index chosen
             console.log(`Found ${numberOfStudents} students. Clicking on student at index ${randomIndex}.`);
-
-            // Click on the element at the random index
             await students[randomIndex].click();
         } else {
             console.log('No students found.');
@@ -51,4 +44,11 @@ export async function studentData (driver){
     const currentUtcTimestamp = new Date().toISOString();
     console.log(currentUtcTimestamp);
 
+}
+
+export async function handleBsttFlow(driver) {
+ const endButton= await  driver.$("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[3]/android.widget.Button")
+  await endButton.click();
+ const storeBaseQButton= await driver.$("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
+ await storeBaseQButton.click();
 }
