@@ -7,7 +7,7 @@ export async function selectRandomStudent(driver) {
         await driver.waitUntil(
             async () => {
                 const students = await driver.$$(
-                    '//android.widget.TextView[@resource-id="org.samagra.nisai:id/btTakeAssessment"]'
+                    '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/btTakeAssessment"]'
                 );
                 return students.length > 0;
             },
@@ -19,7 +19,7 @@ export async function selectRandomStudent(driver) {
 
         
         const students = await driver.$$(
-            '//android.widget.TextView[@resource-id="org.samagra.nisai:id/btTakeAssessment"]'
+            '//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/btTakeAssessment"]'
         );
         const numberOfStudents = students.length;
 

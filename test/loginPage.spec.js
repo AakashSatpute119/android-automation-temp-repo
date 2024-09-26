@@ -71,7 +71,7 @@ describe("Login Page Test", function () {
 
   it("LP_TC6_Verify mobile number input box is visiable", async () => {
     const mobileNumberInputBox = await driver.$(
-      loginPageLocators.mobileNumberInputBox
+      loginPageLocators.mobileNumberInputBoxDefaultText
     );
     const isElementDisplayed = await mobileNumberInputBox.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");

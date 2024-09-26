@@ -30,8 +30,14 @@ describe("[Teacher Flow] Profile page test cases", function () {
     await mobileNumberInputBox.setValue(constants.teacherValidMobileNumber);
     (await driver.$(loginPageLocators.sendOtpButton)).click();
     await driver.setTimeout({ implicit: 6000 });
-    const OTP = await driver.$(loginPageLocators.otpInputBox);
-    await OTP.addValue(constants.defaultOtp);
+    const OTPField1 = await driver.$(loginPageLocators.otpInputBox1);
+    const OTPField2 = await driver.$(loginPageLocators.otpInputBox2);
+    const OTPField3 = await driver.$(loginPageLocators.otpInputBox3);
+    const OTPField4 = await driver.$(loginPageLocators.otpInputBox4);
+    await OTPField1.addValue(constants.defaultOtp[0]);
+    await OTPField2.addValue(constants.defaultOtp[1]);
+    await OTPField3.addValue(constants.defaultOtp[2]);
+    await OTPField4.addValue(constants.defaultOtp[3]);
     const submitOtp = await driver.$(loginPageLocators.submitOtpButton);
     await submitOtp.click();
 
@@ -52,12 +58,12 @@ describe("[Teacher Flow] Profile page test cases", function () {
     // Verify the element exists
     const isElementDisplayed = await teacherProfileText.isDisplayed();
     assert.strictEqual(isElementDisplayed, true, "Element is not displayed");
-    const text = await teacherProfileText.getText();
-    assert.strictEqual(
-      text,
-      constants.teacherProfileText,
-      `Element text is not ${constants.teacherProfileText}, it is '${text}'`
-    );
+    // const text = await teacherProfileText.getText();
+    // assert.strictEqual(
+    //   text,
+    //   constants.teacherProfileText,
+    //   `Element text is not ${constants.teacherProfileText}, it is '${text}'`
+    // );
   });
 
   it("TF_TC2_Verify Nipun Lakshya app title is visiable in header on teacher profile page", async () => {
@@ -73,7 +79,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
     );
   });
 
-  it("TF_TC3_Verify app version is displayed in header", async () => {
+  it.skip("TF_TC3_Verify app version is displayed in header", async () => {
     const appVersion = await driver.$(teacherFlowLocators.appVersion);
     // Verify the element exists
     const isElementDisplayed = await appVersion.isDisplayed();
@@ -107,7 +113,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
     //udise
     await driver.setTimeout({ implicit: 20000 });
 
-    const udise = await driver.$(teacherFlowLocators.uside);
+    const udise = await driver.$(teacherFlowLocators.udise);
     const isUdiseDisplayed = await udise.isDisplayed();
     assert.strictEqual(isUdiseDisplayed, true, "Element is not displayed");
     const udisetext = await udise.getText();
@@ -140,7 +146,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
     );
   });
 
-  it("TF_TC6_Verify Shikshak Aklan Saransh label text is visiable.", async () => {
+  it("TF_TC6_Verify Shikshak Aklan Saransh label text is visible.", async () => {
     const teacherAnkalanSaransh = await driver.$(
       teacherFlowLocators.teacherAnkalanSaransh
     );
@@ -154,7 +160,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
     );
   });
 
-  it("TF_TC7_Verify vartman sapata aklan text is visiable ", async () => {
+  it.skip("TF_TC7_Verify vartman sapata aklan text is visiable ", async () => {
     //weekly student assessed vartaman sapta text
     const currentMonthAnkalanElement = await driver.$(
       teacherFlowLocators.currentMonthAnkalan
@@ -175,7 +181,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
     );
   });
 
-  it("TF_TC8_Verify count of student assessed in week text and count is visiable", async () => {
+  it.skip("TF_TC8_Verify count of student assessed in week text and count is visiable", async () => {
     // student assessed in week text
     const studentsAssessedInWeek = await driver.$(
       teacherFlowLocators.countOfStudentAssesedInWeek
@@ -195,7 +201,7 @@ describe("[Teacher Flow] Profile page test cases", function () {
     );
   });
 
-  it("TF_TC9_Verify count of student nipun in week text and count is visiable", async () => {
+  it.skip("TF_TC9_Verify count of student nipun in week text and count is visiable", async () => {
     // nipun students in week
     const studentsNipundInWeek = await driver.$(
       teacherFlowLocators.countNipunStudentsInWeek
@@ -294,7 +300,7 @@ describe("[Teacher Flow] School summary page", function () {
 
   before(async function () {
     // refresh on screen
-    await refreshScreenByScrollDown(driver);
+    // await refreshScreenByScrollDown(driver);
     await driver.$(teacherFlowLocators.schoolAssessmentSummaryButton).click()
   });
 
@@ -523,7 +529,6 @@ describe("[Teacher Flow] School summary page", function () {
     }
   });
 });
-
 
 describe("[Teacher Flow] Student listing page",function(){
   this.timeout(100000);

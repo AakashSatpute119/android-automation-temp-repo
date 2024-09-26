@@ -31,14 +31,14 @@ export const popupMessageOnAageBadheText =
 
 // Login Page
 
-export const titleTextOnLoginPage = " मेंटर, शिक्षक, परीक्षक";
+export const titleTextOnLoginPage = "मेंटर, शिक्षक, परीक्षक";
 export const enterRegisterNumberText = "पंजीकृत मोबाइल नंबर भरें";
 export const sendOtpButtonText = "OTP भेजें।";
 export const numberNotregistedText = "नंबर पंजीकृत नहीं है?";
 export const helplineNumberText = "0522–3538777";
-export const mobileNumberInputBoxText = "जैसे: 9876543210";
-export const tenDigitNumber = "1234567890";
-export const moreThanTenDigitNumber = "1234567890123";
+export const mobileNumberInputBoxText = "उदहारण: 9876543210";
+export const tenDigitNumber = "9876543210";
+export const moreThanTenDigitNumber = "9876543210123";
 export const mobileNotRegisteredOnPortal = "7756925005";
 export const pleaseCheckNumberText =
   "कृपया अपने द्वारा भरे गए मोबाइल नंबर की जांच करें";
@@ -55,10 +55,10 @@ export const appVersiontext = "V 2.4.0_test_v21";
 export const teacherValidMobileNumber = "9998887773";
 export const defaultOtp = "0000";
 export const teacherProfileText = "शिक्षक प्रोफाइल";
-export const nameText = "नाम :   Android test staging";
-export const udiseText = "UDISE :   9150204103";
-export const districtText = "जनपद :   AGRA";
-export const blockText = "ब्लॉक :   Kheragarh";
+export const nameText = "Android test staging";
+export const udiseText = "UDISE: 9150204103";
+export const districtText = "जनपद: AGRA";
+export const blockText = "ब्लॉक: Kheragarh";
 export const teacherAnkalanSaranshText = "शिक्षक आकलन सारांश";
 export const vartamanSaptahikAkalanText = "वर्तमान सप्ताह आकलन";
 export const studentsAssessedInWeekText = "विद्यार्थियों का आंकलन किया";

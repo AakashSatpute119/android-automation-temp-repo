@@ -4,12 +4,12 @@ export async function fillOdkForm(driver) {
   await driver.setTimeout({ implicit: 20000 });
 
   async function selectVisibleThirdOptions() {
-    const gridViewXpath = `//android.widget.GridView[@resource-id="org.samagra.nisai:id/choices_recycler_view"]`;
+    const gridViewXpath = `//android.widget.GridView[@resource-id="org.samagra.missionPrerna:id/choices_recycler_view"]`;
     const visibleGridViews = await driver.$$(gridViewXpath);
     console.log(`Found ${visibleGridViews.length} visible sets on the screen`);
 
     for (let i = 0; i < visibleGridViews.length; i++) {
-      const optionsXpath = `(//android.widget.GridView[@resource-id="org.samagra.nisai:id/choices_recycler_view"])[${i + 1}]/android.widget.RelativeLayout`;
+      const optionsXpath = `(//android.widget.GridView[@resource-id="org.samagra.missionPrerna:id/choices_recycler_view"])[${i + 1}]/android.widget.RelativeLayout`;
       const optionElements = await driver.$$(optionsXpath);
 
       try {
@@ -48,7 +48,7 @@ export async function fillOdkForm(driver) {
     scrollCount++; // Increment scroll count
 
     // Check if new sets have appeared by comparing the number of sets before and after swipe
-    const gridViewXpath = `//android.widget.GridView[@resource-id="org.samagra.nisai:id/choices_recycler_view"]`;
+    const gridViewXpath = `//android.widget.GridView[@resource-id="org.samagra.missionPrerna:id/choices_recycler_view"]`;
     const visibleGridViewsAfterSwipe = await driver.$$(gridViewXpath);
     
     if (visibleGridViewsAfterSwipe.length === 0) {
