@@ -4,7 +4,7 @@ export const getWdOpts = () => {
   const platformName = process.env.APPIUM_PLATFORM_NAME || "Android";
   const automationName = process.env.APPIUM_AUTOMATION_NAME || "UiAutomator2";
   const deviceName = process.env.APPIUM_DEVICE_NAME || "emulator-5554";
-  const apkPath = process.env.APPIUM_APP_PATH || "App/app.apk";
+  const apkPath = process.env.APPIUM_APP_PATH || "App/app1.apk";
 
   return {
     hostname: process.env.APPIUM_HOST || "0.0.0.0",
