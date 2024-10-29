@@ -53,12 +53,18 @@ To register on Prerna portal, please call the DC Training/Quality in BSA office 
 export const nipunLakshyaAppTitle = "निपुण लक्ष्य ऐप ";
 export const appVersiontext = "V 2.4.0_test_v21";
 export const teacherValidMobileNumber = "9998887773";
+export const mentorValidMobileNumber = "9999999992";
 export const defaultOtp = "0000";
 export const teacherProfileText = "शिक्षक प्रोफाइल";
 export const nameText = "Android test staging";
+export const mentornameText = "dev diet mentor -2 ";
 export const udiseText = "UDISE: 9150204103";
+export const udisefortest = "9170308601";
 export const districtText = "जनपद: AGRA";
 export const blockText = "ब्लॉक: Kheragarh";
+export const mentorUdiseText = "UDISE: 0";
+export const mentorDistrictText = "जनपद: ETAH";
+export const mentorBlockText = "ब्लॉक: Awagarh";
 export const teacherAnkalanSaranshText = "शिक्षक आकलन सारांश";
 export const vartamanSaptahikAkalanText = "वर्तमान सप्ताह आकलन";
 export const studentsAssessedInWeekText = "विद्यार्थियों का आंकलन किया";
@@ -66,8 +72,7 @@ export const nipunStudentsInWeekText = "निपुण\nविद्यार�
 export const studentsAssessedInMonthText = "विद्यार्थियों का आंकलन किया";
 export const nipunStudentsInMonthText = "निपुण\nविद्यार्थी";
 export const vidyarthiAkalanButoonText = "विद्यार्थी आकलन";
-export const vidyalayKeAkalanKaSaransButtonText =
-  "विद्यालय के सभी आकलन का सारांश";
+export const vidyalayKeAkalanKaSaransButtonText = "आकलन सारांश";
 
 
   // school summary page 
@@ -84,8 +89,8 @@ export const nipunStudentsText="विद्यार्थी\nनिपुण"
 //student listing page 
 export const selectGradeText="कृपया एक कक्षा चुनें"
 export const nipunText="निपुण: "
-export const notNipunText="निपुण नहीं है: "
-export const penddingToAssess="आकलन नहीं हुआ: "
+export const notNipunText="नॉन-निपुण: "
+export const penddingToAssess="आँकलन लंबित: "
 export const studentNameNotInListText="विद्यार्थी का नाम सूची में नहीं है?"
 export const anynoumousStudentTakeAssessmentButtonText="चयन बिना आकलन करें !"
 export const akalanText="आकलन"

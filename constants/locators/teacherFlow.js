@@ -28,6 +28,18 @@ export const countOfStudentAssesedInMonth =
 
 export const studentAkalanButton = `//android.widget.TextView[@text="विद्यार्थी आकलन"]`;
 export const schoolAssessmentSummaryButton = `//android.widget.TextView[@text="आकलन सारांश"]`;
+//Mentor - choose School page
+export const chooseScholTitle = `//android.widget.TextView[@text="विद्यालय चुनें"]`
+export const FilterScholJanpad = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/txv_label" and @text="जनपद :"]`
+export const FilterScholBlock = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/txv_label" and @text="ब्लॉक :"]`
+export const FilterScholPanchayat = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/txv_label" and @text="न्याय पंचायत :"]`
+export const FilterScholJanpadSelect  = `(//android.widget.Spinner[@resource-id="org.samagra.missionPrerna:id/spn"])[1]`
+export const FilterScholBlockSelect = `(//android.widget.Spinner[@resource-id="org.samagra.missionPrerna:id/spn"])[2]`
+export const FilterScholPanchayatSelect = `(//android.widget.Spinner[@resource-id="org.samagra.missionPrerna:id/spn"])[3]`
+export const MarkVisitedSchool = `//android.widget.CheckBox[@resource-id="org.samagra.missionPrerna:id/checkbox_visit"]`
+export const FilterOptionList = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvGpName"]`
+export const SearchUDISENo = `//android.widget.EditText[@resource-id="org.samagra.missionPrerna:id/et_search"]`
+export const selectSearchSchoolforAssesment = `//android.view.ViewGroup[@resource-id="org.samagra.missionPrerna:id/cl_school_clicked"]`
 
 // school summary page
 export const headerTextSchoolAkalanSaransh = `//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/title"]`;
@@ -60,14 +72,15 @@ export const studentLastAssessedDate=`//*[@resource-id="org.samagra.missionPrern
 export const takeAssessmentButton=`//*[@resource-id="org.samagra.missionPrerna:id/btTakeAssessment"]`
 export const nipunTextElement=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunText" and @text="निपुण: "]`
 export const nipunCount=`(//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunCount"])[1]`
-export const notNipunTextElement=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunText" and @text="निपुण नहीं है: "]`
+export const notNipunTextElement=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunText" and @text="नॉन-निपुण: "]`
 export const notNipunCount=`(//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunCount"])[2]`
-export const pendingAssessmentText=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunText" and @text="आकलन नहीं हुआ: "]`
+export const pendingAssessmentText=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunText" and @text="आँकलन लंबित: "]`
 export const pendingAssessmentCount=`(//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/tvNipunCount"])[3]`
 export const monthText=`//*[@resource-id="org.samagra.missionPrerna:id/tvMonth"]`
 export const previousMonth=`//*[@resource-id="org.samagra.missionPrerna:id/ivPreviousMonth"]`  
 export const nextMonth=`//*[@resource-id="org.samagra.missionPrerna:id/ivNextMonth"]`
 export const refreshButton=`//android.widget.Button[@content-desc="Refresh"]`
+export const studentAnklanPageBack=`//android.widget.TextView[@text="विद्यार्थी आकलन पर वापिस जाएं"]`
 export const studentListingToHomePageBackButton=`//android.widget.ImageButton[@content-desc="Navigate up"]`
 export const studentNameNotInListTextElement=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/help_tv"]`
 export const anynoumousStudentTakeAssessmentButton=`//android.widget.TextView[@resource-id="org.samagra.missionPrerna:id/take_assessment_btn"]`

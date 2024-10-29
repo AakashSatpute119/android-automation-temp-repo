@@ -59,6 +59,7 @@ describe("[Teacher Flow] Assessment flow grade 1", function () {
     await driver.$(teacherFlowLocators.studentAkalanButton).click();
     await driver.$(teacherFlowLocators.grade1Label).click(); 
     await selectRandomStudent(driver);
+    await driver.setTimeout({ implicit: 600000 });
     await fillOdkForm(driver);
     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
     await fillOdkForm(driver);

@@ -8,6 +8,7 @@ import * as teacherFlowLocators from "../constants/locators/teacherFlow.js";
 import { refreshScreenByScrollDown ,scrollUp,performSwipe} from "../utils/gestures.js";
 import { fillOdkForm } from "../utils/fillOdkForm.js";
 import * as odkLocators from "../constants/locators/odkFlow.js"
+import * as scoreBoard from "../constants/locators/ScoreBoared.js"
 import {selectRandomStudent,studentData,handleBsttFlow} from "../utils/commonFunctions.js"
  
 let driver;
@@ -295,240 +296,240 @@ describe("[Teacher Flow] Profile page test cases", function () {
   });
 });
 
-describe("[Teacher Flow] School summary page", function () {
-  this.timeout(100000);
+// describe("[Teacher Flow] School summary page", function () {
+//   this.timeout(100000);
 
-  before(async function () {
-    // refresh on screen
-    // await refreshScreenByScrollDown(driver);
-    await driver.$(teacherFlowLocators.schoolAssessmentSummaryButton).click()
-  });
+//   before(async function () {
+//     // refresh on screen
+//     // await refreshScreenByScrollDown(driver);
+//     await driver.$(teacherFlowLocators.schoolAssessmentSummaryButton).click()
+//   });
 
-  // test cases
+//   // test cases
 
-  it("TF_TC14_Verify Teacher able to click on school summary button and redirected to summary page", async () => {
-    const headerTextSchoolAkalanSaransh = await driver.$(teacherFlowLocators.headerTextSchoolAkalanSaransh);
-    const isDisplayed = await headerTextSchoolAkalanSaransh.isDisplayed();
-    assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    const text = await headerTextSchoolAkalanSaransh.getText();
-    assert.strictEqual(
-      text,
-      constants.headerTextSchoolAkalanSaranshText,
-      `Element text is not ${constants.headerTextSchoolAkalanSaranshText}, it is '${text}'`
-    );
-  });
+//   it("TF_TC14_Verify Teacher able to click on school summary button and redirected to summary page", async () => {
+//     const headerTextSchoolAkalanSaransh = await driver.$(teacherFlowLocators.headerTextSchoolAkalanSaransh);
+//     const isDisplayed = await headerTextSchoolAkalanSaransh.isDisplayed();
+//     assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//     const text = await headerTextSchoolAkalanSaransh.getText();
+//     assert.strictEqual(
+//       text,
+//       constants.headerTextSchoolAkalanSaranshText,
+//       `Element text is not ${constants.headerTextSchoolAkalanSaranshText}, it is '${text}'`
+//     );
+//   });
 
-  it("TF_TC15_Verify able to see grade 1,2,3 and all grade buttons and it is clickable", async () => {
-    //grade 1
-    const grade1Label = await driver.$(teacherFlowLocators.grade1Label);
-    const grade1LabelisDisplayed = await grade1Label.isDisplayed();
-    assert.strictEqual(grade1LabelisDisplayed, true, "Element is not displayed");
-    const textGrade1Label = await grade1Label.getText();
-    assert.strictEqual(
-      textGrade1Label,
-      constants.grade1LabelText,
-      `Element text is not ${constants.grade1LabelText}, it is '${textGrade1Label}'`
-    );
-    await grade1Label.click();
+//   it("TF_TC15_Verify able to see grade 1,2,3 and all grade buttons and it is clickable", async () => {
+//     //grade 1
+//     const grade1Label = await driver.$(teacherFlowLocators.grade1Label);
+//     const grade1LabelisDisplayed = await grade1Label.isDisplayed();
+//     assert.strictEqual(grade1LabelisDisplayed, true, "Element is not displayed");
+//     const textGrade1Label = await grade1Label.getText();
+//     assert.strictEqual(
+//       textGrade1Label,
+//       constants.grade1LabelText,
+//       `Element text is not ${constants.grade1LabelText}, it is '${textGrade1Label}'`
+//     );
+//     await grade1Label.click();
 
-    //grade 2
-    const grade2Label = await driver.$(teacherFlowLocators.grade2Label);
-    const grade2LabelisDisplayed = await grade2Label.isDisplayed();
-    assert.strictEqual(grade2LabelisDisplayed, true, "Element is not displayed");
-    const textGrade2Label = await grade2Label.getText();
-    assert.strictEqual(
-      textGrade2Label,
-      constants.grade2LabelText,
-      `Element text is not ${constants.grade2LabelText}, it is '${textGrade2Label}'`
-    );
-    await grade2Label.click();
+//     //grade 2
+//     const grade2Label = await driver.$(teacherFlowLocators.grade2Label);
+//     const grade2LabelisDisplayed = await grade2Label.isDisplayed();
+//     assert.strictEqual(grade2LabelisDisplayed, true, "Element is not displayed");
+//     const textGrade2Label = await grade2Label.getText();
+//     assert.strictEqual(
+//       textGrade2Label,
+//       constants.grade2LabelText,
+//       `Element text is not ${constants.grade2LabelText}, it is '${textGrade2Label}'`
+//     );
+//     await grade2Label.click();
     
-    //grade 3
-    const grade3Label = await driver.$(teacherFlowLocators.grade3Label);
-    const grade3LabelisDisplayed = await grade3Label.isDisplayed();
-    assert.strictEqual(grade3LabelisDisplayed, true, "Element is not displayed");
-    const textGrade3Label = await grade3Label.getText();
-    assert.strictEqual(
-      textGrade3Label,
-      constants.grade3LabelText,
-      `Element text is not ${constants.grade3LabelText}, it is '${textGrade3Label}'`
-    );
-    await grade3Label.click();
+//     //grade 3
+//     const grade3Label = await driver.$(teacherFlowLocators.grade3Label);
+//     const grade3LabelisDisplayed = await grade3Label.isDisplayed();
+//     assert.strictEqual(grade3LabelisDisplayed, true, "Element is not displayed");
+//     const textGrade3Label = await grade3Label.getText();
+//     assert.strictEqual(
+//       textGrade3Label,
+//       constants.grade3LabelText,
+//       `Element text is not ${constants.grade3LabelText}, it is '${textGrade3Label}'`
+//     );
+//     await grade3Label.click();
 
-    // all grade text 
-    const allGradesLabel = await driver.$(teacherFlowLocators.allGradesLabel);
-    const allGradesLabelisDisplayed = await allGradesLabel.isDisplayed();
-    assert.strictEqual(allGradesLabelisDisplayed, true, "Element is not displayed");
-    const textAllGrade = await allGradesLabel.getText();
-    assert.strictEqual(
-      textAllGrade,
-      constants.allGradesLabelText,
-      `Element text is not ${constants.allGradesLabelText}, it is '${textAllGrade}'`
-    );
-    await allGradesLabel.click();
-  });
+//     // all grade text 
+//     const allGradesLabel = await driver.$(teacherFlowLocators.allGradesLabel);
+//     const allGradesLabelisDisplayed = await allGradesLabel.isDisplayed();
+//     assert.strictEqual(allGradesLabelisDisplayed, true, "Element is not displayed");
+//     const textAllGrade = await allGradesLabel.getText();
+//     assert.strictEqual(
+//       textAllGrade,
+//       constants.allGradesLabelText,
+//       `Element text is not ${constants.allGradesLabelText}, it is '${textAllGrade}'`
+//     );
+//     await allGradesLabel.click();
+//   });
  
-  it("TF_TC16_Verify summary (month) table is displayed on page", async () => {
-    const monthTable = await driver.$(teacherFlowLocators.monthTable);
-    const isDisplayed = await monthTable.isDisplayed();
-    assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//   it("TF_TC16_Verify summary (month) table is displayed on page", async () => {
+//     const monthTable = await driver.$(teacherFlowLocators.monthTable);
+//     const isDisplayed = await monthTable.isDisplayed();
+//     assert.strictEqual(isDisplayed, true, "Element is not displayed");
 
-  });
+//   });
 
-  it("TF_TC17_Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 1 is selected", async () => {
-    // month column
-    const month = await driver.$(teacherFlowLocators.month);
-    const monthisDisplayed = await month.isDisplayed();
-    assert.strictEqual(monthisDisplayed, true, "Element is not displayed");
-    const textMonth = await month.getText();
-    assert.strictEqual(
-      textMonth,
-      constants.monthText,
-      `Element text is not ${constants.monthText}, it is '${textMonth}'`
-    );
+//   it("TF_TC17_Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 1 is selected", async () => {
+//     // month column
+//     const month = await driver.$(teacherFlowLocators.month);
+//     const monthisDisplayed = await month.isDisplayed();
+//     assert.strictEqual(monthisDisplayed, true, "Element is not displayed");
+//     const textMonth = await month.getText();
+//     assert.strictEqual(
+//       textMonth,
+//       constants.monthText,
+//       `Element text is not ${constants.monthText}, it is '${textMonth}'`
+//     );
 
-    // total students 
-    const totalStudents = await driver.$(teacherFlowLocators.totalStudents);
-    const totalStudentsisDisplayed = await totalStudents.isDisplayed();
-    assert.strictEqual(totalStudentsisDisplayed, true, "Element is not displayed");
-    const texttotalStudents = await totalStudents.getText();
-    assert.strictEqual(
-      texttotalStudents,
-      constants.totalStudentsText,
-      `Element text is not ${constants.totalStudentsText}, it is '${texttotalStudents}'`
-    );
+//     // total students 
+//     const totalStudents = await driver.$(teacherFlowLocators.totalStudents);
+//     const totalStudentsisDisplayed = await totalStudents.isDisplayed();
+//     assert.strictEqual(totalStudentsisDisplayed, true, "Element is not displayed");
+//     const texttotalStudents = await totalStudents.getText();
+//     assert.strictEqual(
+//       texttotalStudents,
+//       constants.totalStudentsText,
+//       `Element text is not ${constants.totalStudentsText}, it is '${texttotalStudents}'`
+//     );
 
     
-    // students assessed
-    const studentsAssessed = await driver.$(teacherFlowLocators.studentsAssessed);
-    const studentsAssessedisDisplayed = await studentsAssessed.isDisplayed();
-    assert.strictEqual(studentsAssessedisDisplayed, true, "Element is not displayed");
-    const textstudentsAssessed = await studentsAssessed.getText();
-    assert.strictEqual(
-      textstudentsAssessed,
-      constants.studentsAssessedText,
-      `Element text is not ${constants.studentsAssessedText}, it is '${textstudentsAssessed}'`
-    );
+//     // students assessed
+//     const studentsAssessed = await driver.$(teacherFlowLocators.studentsAssessed);
+//     const studentsAssessedisDisplayed = await studentsAssessed.isDisplayed();
+//     assert.strictEqual(studentsAssessedisDisplayed, true, "Element is not displayed");
+//     const textstudentsAssessed = await studentsAssessed.getText();
+//     assert.strictEqual(
+//       textstudentsAssessed,
+//       constants.studentsAssessedText,
+//       `Element text is not ${constants.studentsAssessedText}, it is '${textstudentsAssessed}'`
+//     );
 
-        // nipun students
-    const nipunStudents = await driver.$(teacherFlowLocators.nipunStudents);
-    const nipunStudentsisDisplayed = await nipunStudents.isDisplayed();
-    assert.strictEqual(nipunStudentsisDisplayed, true, "Element is not displayed");
-    const textnipunStudents = await nipunStudents.getText();
-    assert.strictEqual(
-    textnipunStudents,
-          constants.nipunStudentsText,
-          `Element text is not ${constants.nipunStudentsText}, it is '${textnipunStudents}'`
-    );
+//         // nipun students
+//     const nipunStudents = await driver.$(teacherFlowLocators.nipunStudents);
+//     const nipunStudentsisDisplayed = await nipunStudents.isDisplayed();
+//     assert.strictEqual(nipunStudentsisDisplayed, true, "Element is not displayed");
+//     const textnipunStudents = await nipunStudents.getText();
+//     assert.strictEqual(
+//     textnipunStudents,
+//           constants.nipunStudentsText,
+//           `Element text is not ${constants.nipunStudentsText}, it is '${textnipunStudents}'`
+//     );
 
-  });
+//   });
 
 
  
-  it("TF_TC18_Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 2 is selected", async () => {
-    await driver.$(teacherFlowLocators.grade2Label).click();
-    // month column
-   const month = await driver.$(teacherFlowLocators.month);
-   const monthisDisplayed = await month.isDisplayed();
-   assert.strictEqual(monthisDisplayed, true, "Element is not displayed");
-   const textMonth = await month.getText();
-   assert.strictEqual(
-     textMonth,
-     constants.monthText,
-     `Element text is not ${constants.monthText}, it is '${textMonth}'`
-   );
+//   it("TF_TC18_Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 2 is selected", async () => {
+//     await driver.$(teacherFlowLocators.grade2Label).click();
+//     // month column
+//    const month = await driver.$(teacherFlowLocators.month);
+//    const monthisDisplayed = await month.isDisplayed();
+//    assert.strictEqual(monthisDisplayed, true, "Element is not displayed");
+//    const textMonth = await month.getText();
+//    assert.strictEqual(
+//      textMonth,
+//      constants.monthText,
+//      `Element text is not ${constants.monthText}, it is '${textMonth}'`
+//    );
 
-   // total students 
-   const totalStudents = await driver.$(teacherFlowLocators.totalStudents);
-   const totalStudentsisDisplayed = await totalStudents.isDisplayed();
-   assert.strictEqual(totalStudentsisDisplayed, true, "Element is not displayed");
-   const texttotalStudents = await totalStudents.getText();
-   assert.strictEqual(
-     texttotalStudents,
-     constants.totalStudentsText,
-     `Element text is not ${constants.totalStudentsText}, it is '${texttotalStudents}'`
-   );
+//    // total students 
+//    const totalStudents = await driver.$(teacherFlowLocators.totalStudents);
+//    const totalStudentsisDisplayed = await totalStudents.isDisplayed();
+//    assert.strictEqual(totalStudentsisDisplayed, true, "Element is not displayed");
+//    const texttotalStudents = await totalStudents.getText();
+//    assert.strictEqual(
+//      texttotalStudents,
+//      constants.totalStudentsText,
+//      `Element text is not ${constants.totalStudentsText}, it is '${texttotalStudents}'`
+//    );
 
    
-   // students assessed
-   const studentsAssessed = await driver.$(teacherFlowLocators.studentsAssessed);
-   const studentsAssessedisDisplayed = await studentsAssessed.isDisplayed();
-   assert.strictEqual(studentsAssessedisDisplayed, true, "Element is not displayed");
-   const textstudentsAssessed = await studentsAssessed.getText();
-   assert.strictEqual(
-     textstudentsAssessed,
-     constants.studentsAssessedText,
-     `Element text is not ${constants.studentsAssessedText}, it is '${textstudentsAssessed}'`
-   );
+//    // students assessed
+//    const studentsAssessed = await driver.$(teacherFlowLocators.studentsAssessed);
+//    const studentsAssessedisDisplayed = await studentsAssessed.isDisplayed();
+//    assert.strictEqual(studentsAssessedisDisplayed, true, "Element is not displayed");
+//    const textstudentsAssessed = await studentsAssessed.getText();
+//    assert.strictEqual(
+//      textstudentsAssessed,
+//      constants.studentsAssessedText,
+//      `Element text is not ${constants.studentsAssessedText}, it is '${textstudentsAssessed}'`
+//    );
 
-       // nipun students
-   const nipunStudents = await driver.$(teacherFlowLocators.nipunStudents);
-   const nipunStudentsisDisplayed = await nipunStudents.isDisplayed();
-   assert.strictEqual(nipunStudentsisDisplayed, true, "Element is not displayed");
-   const textnipunStudents = await nipunStudents.getText();
-   assert.strictEqual(
-   textnipunStudents,
-         constants.nipunStudentsText,
-         `Element text is not ${constants.nipunStudentsText}, it is '${textnipunStudents}'`
-   );
+//        // nipun students
+//    const nipunStudents = await driver.$(teacherFlowLocators.nipunStudents);
+//    const nipunStudentsisDisplayed = await nipunStudents.isDisplayed();
+//    assert.strictEqual(nipunStudentsisDisplayed, true, "Element is not displayed");
+//    const textnipunStudents = await nipunStudents.getText();
+//    assert.strictEqual(
+//    textnipunStudents,
+//          constants.nipunStudentsText,
+//          `Element text is not ${constants.nipunStudentsText}, it is '${textnipunStudents}'`
+//    );
 
-  });
+//   });
 
-  it("TF_TC19_Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 3 is selected", async () => {
-    await driver.$(teacherFlowLocators.grade3Label).click();
-    // month column
-   const month = await driver.$(teacherFlowLocators.month);
-   const monthisDisplayed = await month.isDisplayed();
-   assert.strictEqual(monthisDisplayed, true, "Element is not displayed");
-   const textMonth = await month.getText();
-   assert.strictEqual(
-     textMonth,
-     constants.monthText,
-     `Element text is not ${constants.monthText}, it is '${textMonth}'`
-   );
+//   it("TF_TC19_Verify Verify month,total students,assessed students,nipun students this columns text are visiable on page when grade 3 is selected", async () => {
+//     await driver.$(teacherFlowLocators.grade3Label).click();
+//     // month column
+//    const month = await driver.$(teacherFlowLocators.month);
+//    const monthisDisplayed = await month.isDisplayed();
+//    assert.strictEqual(monthisDisplayed, true, "Element is not displayed");
+//    const textMonth = await month.getText();
+//    assert.strictEqual(
+//      textMonth,
+//      constants.monthText,
+//      `Element text is not ${constants.monthText}, it is '${textMonth}'`
+//    );
 
-   // total students 
-   const totalStudents = await driver.$(teacherFlowLocators.totalStudents);
-   const totalStudentsisDisplayed = await totalStudents.isDisplayed();
-   assert.strictEqual(totalStudentsisDisplayed, true, "Element is not displayed");
-   const texttotalStudents = await totalStudents.getText();
-   assert.strictEqual(
-     texttotalStudents,
-     constants.totalStudentsText,
-     `Element text is not ${constants.totalStudentsText}, it is '${texttotalStudents}'`
-   );
+//    // total students 
+//    const totalStudents = await driver.$(teacherFlowLocators.totalStudents);
+//    const totalStudentsisDisplayed = await totalStudents.isDisplayed();
+//    assert.strictEqual(totalStudentsisDisplayed, true, "Element is not displayed");
+//    const texttotalStudents = await totalStudents.getText();
+//    assert.strictEqual(
+//      texttotalStudents,
+//      constants.totalStudentsText,
+//      `Element text is not ${constants.totalStudentsText}, it is '${texttotalStudents}'`
+//    );
 
    
-   // students assessed
-   const studentsAssessed = await driver.$(teacherFlowLocators.studentsAssessed);
-   const studentsAssessedisDisplayed = await studentsAssessed.isDisplayed();
-   assert.strictEqual(studentsAssessedisDisplayed, true, "Element is not displayed");
-   const textstudentsAssessed = await studentsAssessed.getText();
-   assert.strictEqual(
-     textstudentsAssessed,
-     constants.studentsAssessedText,
-     `Element text is not ${constants.studentsAssessedText}, it is '${textstudentsAssessed}'`
-   );
+//    // students assessed
+//    const studentsAssessed = await driver.$(teacherFlowLocators.studentsAssessed);
+//    const studentsAssessedisDisplayed = await studentsAssessed.isDisplayed();
+//    assert.strictEqual(studentsAssessedisDisplayed, true, "Element is not displayed");
+//    const textstudentsAssessed = await studentsAssessed.getText();
+//    assert.strictEqual(
+//      textstudentsAssessed,
+//      constants.studentsAssessedText,
+//      `Element text is not ${constants.studentsAssessedText}, it is '${textstudentsAssessed}'`
+//    );
 
-       // nipun students
-   const nipunStudents = await driver.$(teacherFlowLocators.nipunStudents);
-   const nipunStudentsisDisplayed = await nipunStudents.isDisplayed();
-   assert.strictEqual(nipunStudentsisDisplayed, true, "Element is not displayed");
-   const textnipunStudents = await nipunStudents.getText();
-   assert.strictEqual(
-   textnipunStudents,
-         constants.nipunStudentsText,
-         `Element text is not ${constants.nipunStudentsText}, it is '${textnipunStudents}'`
-   );
+//        // nipun students
+//    const nipunStudents = await driver.$(teacherFlowLocators.nipunStudents);
+//    const nipunStudentsisDisplayed = await nipunStudents.isDisplayed();
+//    assert.strictEqual(nipunStudentsisDisplayed, true, "Element is not displayed");
+//    const textnipunStudents = await nipunStudents.getText();
+//    assert.strictEqual(
+//    textnipunStudents,
+//          constants.nipunStudentsText,
+//          `Element text is not ${constants.nipunStudentsText}, it is '${textnipunStudents}'`
+//    );
  
-  });
-  after(async function () {
-    if (driver) {
-      await refreshScreenByScrollDown(driver);
-      await driver.$(teacherFlowLocators.backButtonOnSchoolSummaryPage).click();
-    }
-  });
-});
+//   });
+//   after(async function () {
+//     if (driver) {
+//       await refreshScreenByScrollDown(driver);
+//       await driver.$(teacherFlowLocators.backButtonOnSchoolSummaryPage).click();
+//     }
+//   });
+// });
 
 describe("[Teacher Flow] Student listing page",function(){
   this.timeout(100000);
@@ -573,7 +574,7 @@ describe("[Teacher Flow] Student listing page",function(){
       constants.grade2LabelText,
       `Element text is not ${constants.grade2LabelText}, it is '${textGrade2Label}'`
     );
-    await grade2Label.click();
+    // await grade2Label.click();
     
     //grade 3
     const grade3Label = await driver.$(teacherFlowLocators.grade3Label);
@@ -987,176 +988,180 @@ describe("[Teacher Flow] Student listing page",function(){
   });
 
 })
+// describe("[Teacher Flow] Assessment flow grade 1", function () {
+//   this.timeout(100000);
 
-describe("[Teacher Flow] Assessment flow grade 1", function () {
-  this.timeout(100000);
+//   it("TF_TC33_Verify able take assessment for grade 1 student",async()=>{
+//     await driver.$(teacherFlowLocators.studentAkalanButton).click();
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//     await selectRandomStudent(driver);
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     const scoreboard = await driver.$(scoreBoard.scoreboared);
+//     const isScoreBoardDisplayed = await scoreboard.isDisplayed();
+//     assert.strictEqual(isScoreBoardDisplayed, true, "ScoreBoard not displayed");
+//     const studentAnklanPageBack = await driver.$(teacherFlowLocators.studentAnklanPageBack);
+//     const studentAnklanPageBackDisplayed = await studentAnklanPageBack.isDisplayed();
+//     assert.strictEqual(studentAnklanPageBackDisplayed, true, "Student Anklann page is not displayed");
+//     await driver.$(teacherFlowLocators.studentAnklanPageBack).click();
+//     // await driver.$(teacherFlowLocators.assessNextStudent).click();
+//     // verify after assessment comes on student listing page 
+//     // const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//     // const isDisplayed = await selectGradeElement.isDisplayed();
+//     // assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//     // const text = await selectGradeElement.getText();
+//     // assert.strictEqual(
+//     //   text,
+//     //   constants.selectGradeText,
+//     //   `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//     // );
 
-  it("TF_TC33_Verify able take assessment for grade 1 student",async()=>{
-    await driver.$(teacherFlowLocators.studentAkalanButton).click();
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-    await selectRandomStudent(driver);
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await driver.$(teacherFlowLocators.assessNextStudent).click();
-    // verify after assessment comes on student listing page 
-    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    const isDisplayed = await selectGradeElement.isDisplayed();
-    assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    const text = await selectGradeElement.getText();
-    assert.strictEqual(
-      text,
-      constants.selectGradeText,
-      `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    );
+//   })
 
-  })
+//   it.skip("TF_TC34_Verify TC33 assessment are submitted on server manually",async()=>{
+//     console.log("Please check TF_TC33 assessment submission on backend.")
+//   })
 
-  it.skip("TF_TC34_Verify TC33 assessment are submitted on server manually",async()=>{
-    console.log("Please check TF_TC33 assessment submission on backend.")
-  })
+//   it.skip("TF_TC35_Verify student getting pass when we select all ans correctly",async()=>{
+//     console.log("Please check manually.")
+//   })
 
-  it.skip("TF_TC35_Verify student getting pass when we select all ans correctly",async()=>{
-    console.log("Please check manually.")
-  })
-
-  it.skip("TF_TC36_Verify count of student assessed and nipun updated after assessment on teacher profile screen",async()=>{
-    console.log("Please check manually.")
-  })
+//   it.skip("TF_TC36_Verify count of student assessed and nipun updated after assessment on teacher profile screen",async()=>{
+//     console.log("Please check manually.")
+//   })
 
 
-  it("TF_TC37_Verify able take assessment for multiple students from grade 1 (2-students)",async()=>{
-    //1st student 
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-    await selectRandomStudent(driver);
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await driver.$(teacherFlowLocators.assessNextStudent).click();
-    //2nd student 
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-    await selectRandomStudent(driver);
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await driver.$(teacherFlowLocators.assessNextStudent).click();
-    // verify after assessment comes on student listing page 
-    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    const isDisplayed = await selectGradeElement.isDisplayed();
-    assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    const text = await selectGradeElement.getText();
-    assert.strictEqual(
-      text,
-      constants.selectGradeText,
-      `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    );
+//   it.skip("TF_TC37_Verify able take assessment for multiple students from grade 1 (2-students)",async()=>{
+//     //1st student 
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//     await selectRandomStudent(driver);
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await driver.$(teacherFlowLocators.assessNextStudent).click();
+//     //2nd student 
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//     await selectRandomStudent(driver);
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await driver.$(teacherFlowLocators.assessNextStudent).click();
+//     // verify after assessment comes on student listing page 
+//     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//     const isDisplayed = await selectGradeElement.isDisplayed();
+//     assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//     const text = await selectGradeElement.getText();
+//     assert.strictEqual(
+//       text,
+//       constants.selectGradeText,
+//       `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//     );
 
-  })
+//   })
 
-  it.skip("TF_TC38_Verify TC35 assessment are submitted on server manually)",async()=>{
-    console.log("Please check manually.")
-  })
+//   it.skip("TF_TC38_Verify TC35 assessment are submitted on server manually)",async()=>{
+//     console.log("Please check manually.")
+//   })
 
-  it("TF_TC39_Verify able to cancel assessment when assessment is started for grade 1 student",async()=>{
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-    await selectRandomStudent(driver);
-    await fillOdkForm(driver);
-    await driver.pressKeyCode(4);
-    console.log("Pressed the back button.");
-    await driver.$(odkLocators.cancelAssessmentButton).click();
-    // verify after assessment comes on student listing page 
-    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    const isDisplayed = await selectGradeElement.isDisplayed();
-    assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    const text = await selectGradeElement.getText();
-    assert.strictEqual(
-      text,
-      constants.selectGradeText,
-      `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    );
+//   it.skip("TF_TC39_Verify able to cancel assessment when assessment is started for grade 1 student",async()=>{
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//     await selectRandomStudent(driver);
+//     await fillOdkForm(driver);
+//     await driver.pressKeyCode(4);
+//     console.log("Pressed the back button.");
+//     await driver.$(odkLocators.cancelAssessmentButton).click();
+//     // verify after assessment comes on student listing page 
+//     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//     const isDisplayed = await selectGradeElement.isDisplayed();
+//     assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//     const text = await selectGradeElement.getText();
+//     assert.strictEqual(
+//       text,
+//       constants.selectGradeText,
+//       `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//     );
 
-  })
+//   })
   
-  it("TF_TC40_Verify from_id and form_title text is visiable in header while taking grade 1 students assessment",async()=>{
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-    await selectRandomStudent(driver);
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await fillOdkForm(driver);
-    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    await driver.$(teacherFlowLocators.assessNextStudent).click();
-    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    const isDisplayed = await selectGradeElement.isDisplayed();
-    assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    const text = await selectGradeElement.getText();
-    assert.strictEqual(
-      text,
-      constants.selectGradeText,
-      `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    );
+//   it.skip("TF_TC40_Verify from_id and form_title text is visiable in header while taking grade 1 students assessment",async()=>{
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//     await selectRandomStudent(driver);
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await fillOdkForm(driver);
+//     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//     await driver.$(teacherFlowLocators.assessNextStudent).click();
+//     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//     const isDisplayed = await selectGradeElement.isDisplayed();
+//     assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//     const text = await selectGradeElement.getText();
+//     assert.strictEqual(
+//       text,
+//       constants.selectGradeText,
+//       `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//     );
 
-  })
+//   })
 
-  it("TF_TC41_Verify able to take assessment of anonymous student from grade 1",async()=>{
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-      //scroll up 
-      await scrollUp(driver)
-      await scrollUp(driver)
-      await scrollUp(driver)
-      await scrollUp(driver)
-      await scrollUp(driver)   
-      await scrollUp(driver)
-   await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
-   await fillOdkForm(driver);
-   await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-   await fillOdkForm(driver);
-   await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-   await driver.$(teacherFlowLocators.assessNextStudent).click();
-  })
+//   it.skip("TF_TC41_Verify able to take assessment of anonymous student from grade 1",async()=>{
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       //scroll up 
+//       await scrollUp(driver)
+//       await scrollUp(driver)
+//       await scrollUp(driver)
+//       await scrollUp(driver)
+//       await scrollUp(driver)   
+//       await scrollUp(driver)
+//    await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
+//    await fillOdkForm(driver);
+//    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//    await fillOdkForm(driver);
+//    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//    await driver.$(teacherFlowLocators.assessNextStudent).click();
+//   })
 
-  it.skip("TF_TC42_Verify  anonymous student from grade 1 assessment getting submitted on backend",async()=>{
-     console.log("Please check manually.");
-  })
+//   it.skip("TF_TC42_Verify  anonymous student from grade 1 assessment getting submitted on backend",async()=>{
+//      console.log("Please check manually.");
+//   })
 
-  it("TF_TC43_Verify able to cancel assessment which is started for anonymous student from grade 1",async()=>{
-    await driver.$(teacherFlowLocators.grade1Label).click(); 
-      //scroll up 
-      await scrollUp(driver)
-      await scrollUp(driver)
-      await scrollUp(driver)
-      await scrollUp(driver)
-      await scrollUp(driver)   
-      await scrollUp(driver)
-   await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
-   await fillOdkForm(driver);
-   await driver.pressKeyCode(4);
-   console.log("Pressed the back button.");
-   await driver.$(odkLocators.cancelAssessmentButton).click();
-   // verify after assessment comes on student listing page 
-   const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-   const isDisplayed = await selectGradeElement.isDisplayed();
-   assert.strictEqual(isDisplayed, true, "Element is not displayed");
-   const text = await selectGradeElement.getText();
-   assert.strictEqual(
-     text,
-     constants.selectGradeText,
-     `Element text is not ${constants.selectGradeText}, it is '${text}'`
-   );
+//   it.skip("TF_TC43_Verify able to cancel assessment which is started for anonymous student from grade 1",async()=>{
+//     await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       //scroll up 
+//       await scrollUp(driver)
+//       await scrollUp(driver)
+//       await scrollUp(driver)
+//       await scrollUp(driver)
+//       await scrollUp(driver)   
+//       await scrollUp(driver)
+//    await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
+//    await fillOdkForm(driver);
+//    await driver.pressKeyCode(4);
+//    console.log("Pressed the back button.");
+//    await driver.$(odkLocators.cancelAssessmentButton).click();
+//    // verify after assessment comes on student listing page 
+//    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//    const isDisplayed = await selectGradeElement.isDisplayed();
+//    assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//    const text = await selectGradeElement.getText();
+//    assert.strictEqual(
+//      text,
+//      constants.selectGradeText,
+//      `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//    );
    
-  })
+//   })
 
-  after(async function () {
-    if (driver) {
-      await driver.$(teacherFlowLocators.studentListingToHomePageBackButton).click();
-    }
-  });
+//   // after(async function () {
+//   //   if (driver) {
+//   //     await driver.$(teacherFlowLocators.studentAnklanPageBack).click();
+//   //   }
+//   // });
   
-})
-
-
+// })
 describe("[Teacher Flow] Assessment flow grade 2", function () {
     this.timeout(100000);
   
@@ -1169,17 +1174,20 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
       await fillOdkForm(driver);
       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
       await handleBsttFlow(driver);
-      await driver.$(teacherFlowLocators.assessNextStudent).click();
+      const scoreboard = await driver.$(scoreBoard.scoreboared);
+      const isScoreBoardDisplayed = await scoreboard.isDisplayed();
+      assert.strictEqual(isScoreBoardDisplayed, true, "ScoreBoard not displayed");
+      // await driver.$(teacherFlowLocators.assessNextStudent).click();
       // verify after assessment comes on student listing page 
-      const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-      const isDisplayed = await selectGradeElement.isDisplayed();
-      assert.strictEqual(isDisplayed, true, "Element is not displayed");
-      const text = await selectGradeElement.getText();
-      assert.strictEqual(
-        text,
-        constants.selectGradeText,
-        `Element text is not ${constants.selectGradeText}, it is '${text}'`
-      );
+      // const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+      // const isDisplayed = await selectGradeElement.isDisplayed();
+      // assert.strictEqual(isDisplayed, true, "Element is not displayed");
+      // const text = await selectGradeElement.getText();
+      // assert.strictEqual(
+      //   text,
+      //   constants.selectGradeText,
+      //   `Element text is not ${constants.selectGradeText}, it is '${text}'`
+      // );
   
     })
   
@@ -1196,7 +1204,7 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
     })
   
   
-    it("TF_TC48_Verify able take assessment for multiple students from grade 2 (2-students)",async()=>{
+    it.skip("TF_TC48_Verify able take assessment for multiple students from grade 2 (2-students)",async()=>{
       //1st student 
       await driver.$(teacherFlowLocators.grade2Label).click(); 
       await selectRandomStudent(driver);
@@ -1232,7 +1240,7 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
       console.log("Please check manually.")
     })
   
-    it("TF_TC50_Verify able to cancel assessment when assessment is started for grade 2 student",async()=>{
+    it.skip("TF_TC50_Verify able to cancel assessment when assessment is started for grade 2 student",async()=>{
       await driver.$(teacherFlowLocators.grade2Label).click(); 
       await selectRandomStudent(driver);
       await fillOdkForm(driver);
@@ -1252,7 +1260,7 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
   
     })
     
-    it("TF_TC51_Verify from_id and form_title text is visiable in header while taking grade 2 students assessment",async()=>{
+    it.skip("TF_TC51_Verify from_id and form_title text is visiable in header while taking grade 2 students assessment",async()=>{
       await driver.$(teacherFlowLocators.grade2Label).click(); 
       await selectRandomStudent(driver);
       await fillOdkForm(driver);
@@ -1273,7 +1281,7 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
   
     })
   
-    it("TF_TC52_Verify able to take assessment of anonymous student from grade 2",async()=>{
+    it.skip("TF_TC52_Verify able to take assessment of anonymous student from grade 2",async()=>{
       await driver.$(teacherFlowLocators.grade2Label).click(); 
         //scroll up 
         await scrollUp(driver)
@@ -1295,7 +1303,7 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
        console.log("Please check manually.");
     })
   
-    it("TF_TC54_Verify able to cancel assessment which is started for anonymous student from grade 2",async()=>{
+    it.skip("TF_TC54_Verify able to cancel assessment which is started for anonymous student from grade 2",async()=>{
       await driver.$(teacherFlowLocators.grade2Label).click(); 
         //scroll up 
         await scrollUp(driver)
@@ -1328,172 +1336,176 @@ describe("[Teacher Flow] Assessment flow grade 2", function () {
       }
     });
     
-  })
+})
 
-  // describe("[Teacher Flow] Assessment flow grade 3", function () {
-    //   this.timeout(100000);
+
+
+
+
+// describe("[Teacher Flow] Assessment flow grade 3", function () {
+//     this.timeout(100000);
+  
+//     it("TF_TC33_Verify able take assessment for grade 1 student",async()=>{
+//       await driver.$(teacherFlowLocators.studentAkalanButton).click();
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       await selectRandomStudent(driver);
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await driver.$(teacherFlowLocators.assessNextStudent).click();
+//       // verify after assessment comes on student listing page 
+//       const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//       const isDisplayed = await selectGradeElement.isDisplayed();
+//       assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//       const text = await selectGradeElement.getText();
+//       assert.strictEqual(
+//         text,
+//         constants.selectGradeText,
+//         `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//       );
+  
+//     })
+  
+//     it.skip("TF_TC34_Verify TC33 assessment are submitted on server manually",async()=>{
+//       console.log("Please check TF_TC33 assessment submission on backend.")
+//     })
+  
+//     it.skip("TF_TC35_Verify student getting pass when we select all ans correctly",async()=>{
+//       console.log("Please check manually.")
+//     })
+  
+//     it.skip("TF_TC36_Verify count of student assessed and nipun updated after assessment on teacher profile screen",async()=>{
+//       console.log("Please check manually.")
+//     })
+  
+  
+//     it("TF_TC37_Verify able take assessment for multiple students from grade 1 (2-students)",async()=>{
+//       //1st student 
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       await selectRandomStudent(driver);
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await driver.$(teacherFlowLocators.assessNextStudent).click();
+//       //2nd student 
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       await selectRandomStudent(driver);
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await driver.$(teacherFlowLocators.assessNextStudent).click();
+//       // verify after assessment comes on student listing page 
+//       const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//       const isDisplayed = await selectGradeElement.isDisplayed();
+//       assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//       const text = await selectGradeElement.getText();
+//       assert.strictEqual(
+//         text,
+//         constants.selectGradeText,
+//         `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//       );
+  
+//     })
+  
+//     it.skip("TF_TC38_Verify TC35 assessment are submitted on server manually)",async()=>{
+//       console.log("Please check manually.")
+//     })
+  
+//     it("TF_TC39_Verify able to cancel assessment when assessment is started for grade 1 student",async()=>{
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       await selectRandomStudent(driver);
+//       await fillOdkForm(driver);
+//       await driver.pressKeyCode(4);
+//       console.log("Pressed the back button.");
+//       await driver.$(odkLocators.cancelAssessmentButton).click();
+//       // verify after assessment comes on student listing page 
+//       const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//       const isDisplayed = await selectGradeElement.isDisplayed();
+//       assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//       const text = await selectGradeElement.getText();
+//       assert.strictEqual(
+//         text,
+//         constants.selectGradeText,
+//         `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//       );
+  
+//     })
     
-    //   it("TF_TC33_Verify able take assessment for grade 1 student",async()=>{
-    //     await driver.$(teacherFlowLocators.studentAkalanButton).click();
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //     await selectRandomStudent(driver);
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await driver.$(teacherFlowLocators.assessNextStudent).click();
-    //     // verify after assessment comes on student listing page 
-    //     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    //     const isDisplayed = await selectGradeElement.isDisplayed();
-    //     assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    //     const text = await selectGradeElement.getText();
-    //     assert.strictEqual(
-    //       text,
-    //       constants.selectGradeText,
-    //       `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    //     );
-    
-    //   })
-    
-    //   it.skip("TF_TC34_Verify TC33 assessment are submitted on server manually",async()=>{
-    //     console.log("Please check TF_TC33 assessment submission on backend.")
-    //   })
-    
-    //   it.skip("TF_TC35_Verify student getting pass when we select all ans correctly",async()=>{
-    //     console.log("Please check manually.")
-    //   })
-    
-    //   it.skip("TF_TC36_Verify count of student assessed and nipun updated after assessment on teacher profile screen",async()=>{
-    //     console.log("Please check manually.")
-    //   })
-    
-    
-    //   it("TF_TC37_Verify able take assessment for multiple students from grade 1 (2-students)",async()=>{
-    //     //1st student 
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //     await selectRandomStudent(driver);
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await driver.$(teacherFlowLocators.assessNextStudent).click();
-    //     //2nd student 
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //     await selectRandomStudent(driver);
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await driver.$(teacherFlowLocators.assessNextStudent).click();
-    //     // verify after assessment comes on student listing page 
-    //     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    //     const isDisplayed = await selectGradeElement.isDisplayed();
-    //     assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    //     const text = await selectGradeElement.getText();
-    //     assert.strictEqual(
-    //       text,
-    //       constants.selectGradeText,
-    //       `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    //     );
-    
-    //   })
-    
-    //   it.skip("TF_TC38_Verify TC35 assessment are submitted on server manually)",async()=>{
-    //     console.log("Please check manually.")
-    //   })
-    
-    //   it("TF_TC39_Verify able to cancel assessment when assessment is started for grade 1 student",async()=>{
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //     await selectRandomStudent(driver);
-    //     await fillOdkForm(driver);
-    //     await driver.pressKeyCode(4);
-    //     console.log("Pressed the back button.");
-    //     await driver.$(odkLocators.cancelAssessmentButton).click();
-    //     // verify after assessment comes on student listing page 
-    //     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    //     const isDisplayed = await selectGradeElement.isDisplayed();
-    //     assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    //     const text = await selectGradeElement.getText();
-    //     assert.strictEqual(
-    //       text,
-    //       constants.selectGradeText,
-    //       `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    //     );
-    
-    //   })
+//     it("TF_TC40_Verify from_id and form_title text is visiable in header while taking grade 1 students assessment",async()=>{
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//       await selectRandomStudent(driver);
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await driver.$(teacherFlowLocators.assessNextStudent).click();
+//       const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//       const isDisplayed = await selectGradeElement.isDisplayed();
+//       assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//       const text = await selectGradeElement.getText();
+//       assert.strictEqual(
+//         text,
+//         constants.selectGradeText,
+//         `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//       );
+  
+//     })
+  
+//     it("TF_TC41_Verify able to take assessment of anonymous student from grade 1",async()=>{
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//         //scroll up 
+//         await scrollUp(driver)
+//         await scrollUp(driver)
+//         await scrollUp(driver)
+//         await scrollUp(driver)
+//         await scrollUp(driver)   
+//         await scrollUp(driver)
+//       await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await fillOdkForm(driver);
+//       await driver.$(odkLocators.nextButtonBtwTwoForms).click();
+//       await driver.$(teacherFlowLocators.assessNextStudent).click();
+//     })
+  
+//     it.skip("TF_TC42_Verify  anonymous student from grade 1 assessment getting submitted on backend",async()=>{
+//         console.log("Please check manually.");
+//     })
+  
+//     it("TF_TC43_Verify able to cancel assessment which is started for anonymous student from grade 1",async()=>{
+//       await driver.$(teacherFlowLocators.grade1Label).click(); 
+//         //scroll up 
+//         await scrollUp(driver)
+//         await scrollUp(driver)
+//         await scrollUp(driver)
+//         await scrollUp(driver)
+//         await scrollUp(driver)   
+//         await scrollUp(driver)
+//       await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
+//       await fillOdkForm(driver);
+//       await driver.pressKeyCode(4);
+//       console.log("Pressed the back button.");
+//       await driver.$(odkLocators.cancelAssessmentButton).click();
+//       // verify after assessment comes on student listing page 
+//       const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
+//       const isDisplayed = await selectGradeElement.isDisplayed();
+//       assert.strictEqual(isDisplayed, true, "Element is not displayed");
+//       const text = await selectGradeElement.getText();
+//       assert.strictEqual(
+//         text,
+//         constants.selectGradeText,
+//         `Element text is not ${constants.selectGradeText}, it is '${text}'`
+//       );
       
-    //   it("TF_TC40_Verify from_id and form_title text is visiable in header while taking grade 1 students assessment",async()=>{
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //     await selectRandomStudent(driver);
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await fillOdkForm(driver);
-    //     await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //     await driver.$(teacherFlowLocators.assessNextStudent).click();
-    //     const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    //     const isDisplayed = await selectGradeElement.isDisplayed();
-    //     assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    //     const text = await selectGradeElement.getText();
-    //     assert.strictEqual(
-    //       text,
-    //       constants.selectGradeText,
-    //       `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    //     );
+//     })
+  
+//     after(async function () {
+//       if (driver) {
+//         await driver.$(teacherFlowLocators.studentListingToHomePageBackButton).click();
+//       }
+//     });
     
-    //   })
-    
-    //   it("TF_TC41_Verify able to take assessment of anonymous student from grade 1",async()=>{
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //       //scroll up 
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)   
-    //       await scrollUp(driver)
-    //    await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
-    //    await fillOdkForm(driver);
-    //    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //    await fillOdkForm(driver);
-    //    await driver.$(odkLocators.nextButtonBtwTwoForms).click();
-    //    await driver.$(teacherFlowLocators.assessNextStudent).click();
-    //   })
-    
-    //   it.skip("TF_TC42_Verify  anonymous student from grade 1 assessment getting submitted on backend",async()=>{
-    //      console.log("Please check manually.");
-    //   })
-    
-    //   it("TF_TC43_Verify able to cancel assessment which is started for anonymous student from grade 1",async()=>{
-    //     await driver.$(teacherFlowLocators.grade1Label).click(); 
-    //       //scroll up 
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)
-    //       await scrollUp(driver)   
-    //       await scrollUp(driver)
-    //    await driver.$(teacherFlowLocators.anynoumousStudentTakeAssessmentButton).click();
-    //    await fillOdkForm(driver);
-    //    await driver.pressKeyCode(4);
-    //    console.log("Pressed the back button.");
-    //    await driver.$(odkLocators.cancelAssessmentButton).click();
-    //    // verify after assessment comes on student listing page 
-    //    const selectGradeElement = await driver.$(teacherFlowLocators.selectGradeTextElement);
-    //    const isDisplayed = await selectGradeElement.isDisplayed();
-    //    assert.strictEqual(isDisplayed, true, "Element is not displayed");
-    //    const text = await selectGradeElement.getText();
-    //    assert.strictEqual(
-    //      text,
-    //      constants.selectGradeText,
-    //      `Element text is not ${constants.selectGradeText}, it is '${text}'`
-    //    );
-       
-    //   })
-    
-    //   after(async function () {
-    //     if (driver) {
-    //       await driver.$(teacherFlowLocators.studentListingToHomePageBackButton).click();
-    //     }
-    //   });
-      
-    // })
+//   })

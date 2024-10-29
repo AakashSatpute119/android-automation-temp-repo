@@ -1,0 +1,1 @@
+export const scoreboared = '-android uiautomator:new UiSelector().className("android.widget.TextView").instance(0)';

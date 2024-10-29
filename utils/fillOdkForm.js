@@ -36,7 +36,7 @@ export async function fillOdkForm(driver) {
     }
   }
   let scrollCount = 0;
-  const maxScrolls = 10; 
+  const maxScrolls = 6; 
   let moreSetsExist = true;
 
   while (moreSetsExist && scrollCount < maxScrolls) {

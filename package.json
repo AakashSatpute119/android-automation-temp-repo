@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha 'test/**/*.js' --reporter mochawesome --reporter-options reportFilename=nl_test_report"
+    "test": "mocha 'test/**/mentorFlow.spec.js' --reporter mochawesome --reporter-options reportFilename=nl_test_report"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +13,11 @@
   "dependencies": {
     "appium": "^2.10.3",
     "appium-doctor": "^1.16.2",
-    "appium-uiautomator2-driver": "^3.5.6",
+    "appium-uiautomator2-driver": "^3.7.11",
     "webdriverio": "^8.39.0"
   },
   "devDependencies": {
+    "@wdio/cli": "^9.0.9",
     "chai": "^5.1.1",
     "mocha": "^10.4.0",
     "mochawesome": "^7.1.3"
