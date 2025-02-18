@@ -54,7 +54,7 @@ export const nipunLakshyaAppTitle = "निपुण लक्ष्य ऐप "
 export const appVersiontext = "V 2.4.0_test_v21";
 export const teacherValidMobileNumber = "9998887773";
 export const mentorValidMobileNumber = "9999999992";
-export const defaultOtp = "0000";
+export const defaultOtp = "";
 export const teacherProfileText = "शिक्षक प्रोफाइल";
 export const nameText = "Android test staging";
 export const mentornameText = "dev diet mentor -2 ";
@@ -74,23 +74,22 @@ export const nipunStudentsInMonthText = "निपुण\nविद्यार�
 export const vidyarthiAkalanButoonText = "विद्यार्थी आकलन";
 export const vidyalayKeAkalanKaSaransButtonText = "आकलन सारांश";
 
+// school summary page
+export const headerTextSchoolAkalanSaranshText = "स्कूल आकलन सारांश";
+export const grade1LabelText = "कक्षा 1";
+export const grade2LabelText = "कक्षा 2";
+export const grade3LabelText = "कक्षा 3";
+export const allGradesLabelText = "सभी कक्षा";
+export const monthText = "माह";
+export const totalStudentsText = "कुल\nविद्यार्थी";
+export const studentsAssessedText = "विद्यार्थी\nआकलन किए";
+export const nipunStudentsText = "विद्यार्थी\nनिपुण";
 
-  // school summary page 
-export const headerTextSchoolAkalanSaranshText="स्कूल आकलन सारांश"
-export const grade1LabelText="कक्षा 1"
-export const grade2LabelText="कक्षा 2"
-export const grade3LabelText="कक्षा 3"
-export const allGradesLabelText="सभी कक्षा"
-export const monthText="माह"
-export const totalStudentsText="कुल\nविद्यार्थी"
-export const studentsAssessedText="विद्यार्थी\nआकलन किए"
-export const nipunStudentsText="विद्यार्थी\nनिपुण"
-
-//student listing page 
-export const selectGradeText="कृपया एक कक्षा चुनें"
-export const nipunText="निपुण: "
-export const notNipunText="नॉन-निपुण: "
-export const penddingToAssess="आँकलन लंबित: "
-export const studentNameNotInListText="विद्यार्थी का नाम सूची में नहीं है?"
-export const anynoumousStudentTakeAssessmentButtonText="चयन बिना आकलन करें !"
-export const akalanText="आकलन"
+//student listing page
+export const selectGradeText = "कृपया एक कक्षा चुनें";
+export const nipunText = "निपुण: ";
+export const notNipunText = "नॉन-निपुण: ";
+export const penddingToAssess = "आँकलन लंबित: ";
+export const studentNameNotInListText = "विद्यार्थी का नाम सूची में नहीं है?";
+export const anynoumousStudentTakeAssessmentButtonText = "चयन बिना आकलन करें !";
+export const akalanText = "आकलन";
